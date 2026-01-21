@@ -713,18 +713,18 @@
             
             /* Kompakte cards */
             .card {
-                padding: 12px !important;
-                margin-bottom: 10px !important;
-            }
-            
-            .card h2 {
-                font-size: 1.2rem !important;
+                padding: 8px !important;
                 margin-bottom: 8px !important;
             }
             
-            .card h3 {
+            .card h2 {
                 font-size: 1rem !important;
                 margin-bottom: 6px !important;
+            }
+            
+            .card h3 {
+                font-size: 0.85rem !important;
+                margin-bottom: 5px !important;
             }
             
             /* Stats boxes - 3 kolonner */
@@ -782,24 +782,49 @@
                 font-size: 0.9rem !important;
             }
             
-            /* Forms */
+            /* Forms - MEGET kompakte */
             .form-grid {
                 grid-template-columns: 1fr 1fr !important;
-                gap: 6px !important;
+                gap: 4px !important;
             }
             
             .form-group {
+                margin-bottom: 6px !important;
+            }
+            
+            .add-form {
+                margin-bottom: 15px !important;
+            }
+            
+            .add-form h3 {
+                font-size: 0.9rem !important;
                 margin-bottom: 8px !important;
             }
             
             label {
-                font-size: 0.7rem !important;
-                margin-bottom: 2px !important;
+                font-size: 0.65rem !important;
+                margin-bottom: 1px !important;
+                display: block !important;
             }
             
             input, select, textarea {
-                padding: 6px !important;
-                font-size: 0.8rem !important;
+                padding: 4px 6px !important;
+                font-size: 0.75rem !important;
+                min-height: 30px !important;
+            }
+            
+            textarea {
+                min-height: 50px !important;
+            }
+            
+            /* Ingrediens rows mere kompakte */
+            #ingredientRows > div {
+                margin-bottom: 4px !important;
+            }
+            
+            #ingredientRows input {
+                padding: 3px 5px !important;
+                font-size: 0.7rem !important;
             }
             
             /* Item lists */

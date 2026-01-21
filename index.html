@@ -1,9 +1,33 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
+<!-- PWA Manifest - Inline Base64 -->
+<link rel="manifest" href="https://drive.google.com/uc?export=download&id=1cIqGh_6c5W0JgnIvCgLWme55qo_eaIAK">
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seb's Fitness Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Fitness Journal</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAgCAIAAABywqTfAAABAGlDQ1BpY2MAABiVY2BgPMEABCwGDAy5eSVFQe5OChGRUQrsDxgYgRAMEpOLCxhwA6Cqb9cgai/r4lGHC3CmpBYnA+kPQKxSBLQcaKQIkC2SDmFrgNhJELYNiF1eUlACZAeA2EUhQc5AdgqQrZGOxE5CYicXFIHU9wDZNrk5pckIdzPwpOaFBgNpDiCWYShmCGJwZ3AC+R+iJH8RA4PFVwYG5gkIsaSZDAzbWxkYJG4hxFQWMDDwtzAwbDuPEEOESUFiUSJYiAWImdLSGBg+LWdg4I1kYBC+wMDAFQ0LCBxuUwC7zZ0hHwjTGXIYUoEingx5DMkMekCWEYMBgyGDGQCm1j8/yRb+6wAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/AP+gvaeTAAAAB3RJTUUH6gEUCAcUwphoPgAABXNJREFUOMutlV1sW+UZx//Pe46/zrGd2onz1cT5pCFpAoV2LQ2IpqBSoCIV3Q0T08YEbOu4QbANaVygaRdjmoQEaNoEEiCENqRc0FZVydq06qqqhdKUtCYlNGncum5sJ3H8Eef42D7nfXbhFFiZxkX36L153vf5vXpu/v8/SSlxCyVuBf4/8Or/eGPm/2gBAHSjJSLwt/ibpquzDPp6SQEwEUtJADMzQEQqMxMRM4OIAQKIQJKZQQyGJGYmKpUrqaJU2Q5pTuFxEbMAmFmtwkRk21IBAFiWZSrCJDIsK1mxo0ZlfsmYtPTpFBoczl/kz7cemdTuDNf9bEgloTKzECIeT7s1R1JXEpmc5tX8sZQrPrcQqr0i1J6PPh5S6UzXhrGOjZG8Ojoef7I9NHNqctsTgw7dowohsjnjzLmZhbxxcikz/MsH/Kcmuj4c0Tye1oamnuupusy8TCSGjxz+9OHnkv27Zpcz03e3RET7Tt1j21IAeH/kxL6TMZ/TvfP2Fo/To40c0P45Zh0/rtw1ENCdlUKhHE+Yl680ZlJUsIebR7eu/GpLcAEA2BYA7uhty1aov7/FWC6XCsWooi9mi9Z9964sZoqqUvrpT4enn7449HB001AwObWxLxBqarurvwEAEQQAl1PYKysH/3VpOZFfL4V377Mndv84owfw8TGjtTM/PpV99e1/XLUvtnX7y9G2ej2echiebgAMoQJoCvlXLNnTG747rJsZ87kullN7dh36+csbU5ed7hZz4uKhpoErr/2eKgiL61rAvBC1xFp/B8AMASAY9Pc06mfHL//xL6PziWwzxK7hwYGz+y689Mr4vpMHfXXmvtcHGlS2CgNr5sALsaz/yyU3AAapABwKZQolJaS/9acnF5cthe3p+PI7J4zeXY+ve2KHWetUdSVllIOOSn8ggaXrNfUPJlUXYAkhVNu2Pbq2fVPbzFzh13/4KBDQe3o7j2V94XrX8y8e/eDVbc9uqP8sl6+tc5bjMx3eRC6VResGp4cMw9Y0Ra0qIpVKj100D/350bUN/lfenfjbyPn1ruRzO4LddTy7VHr97+nHNoceKiVr1UvJebt+oC9jWYsFhDUSVV3tfmTT5g599Oj5vb99r7vR7cbyF1+ahUpl8qur+y9V1vXWvPzGqXORnEPbG128f11bq9fB8ZwFQJXMCjAXTx49G9u2pevFZzrb2xu8wnXodG5jn/tgJHVi//iefrywXWHb+9nnqlz3TEe970Iqd3nJGgRURQgAg1t6h04nVSFHj0/e8wM5vFPcds9kt/ehrxbL6bHIsdkZe3PTD4e3np3IPrV9EyDbg+79sRzAalX1hmHOxVKf+Nxbw8FPFg5MRA+UDFew+cHf7emsFJbi132bB1u3D/Y9MtQvmSrF0rVLsUjMCUAlAsC1QX9XeyhQ5+/oCrxx9PAWuyiENJvTzY1Nb/7m/nJZFoulq9G5RCI9v5ArrxSnTXeq3GbkTRUAS2ah1Dh5KnJtLRmdxlBs9tz6sD8+u2yI2WvJ+XzeTOfLOZMyZTVdduRl8ErZ9WiHqfldq/4lJauKOJ2ip1pDL/Xtjszem52zTkfNeG4qbajpojAsB5PicYl6n3J7g/NHYe+OwbWAINu2iahoWtPR7PN/PXPui2t3hBSh1xhSJVLX+NyNaxztjVpXs7ezyddSr9cGPF7dKZyqZAbzKi8lZ5crkankyNh0RYrOZl97kzfc6G0IajU+l8ftVB0KEZGAIAIBYAKIiKSUVf8Dw2awLW2bhUJViwYgCLR66CabpqptEq3eEoEZBPAqSwAYjJudvfoVANDX+fdf/P8m5tvp8d38ubHeN4FCoO8C35Nf9A3wfeiNULql+jfEU5ZQODJttQAAAB50RVh0aWNjOmNvcHlyaWdodABHb29nbGUgSW5jLiAyMDE2rAszOAAAABR0RVh0aWNjOmRlc2NyaXB0aW9uAHNSR0K6kHMHAAAAAElFTkSuQmCC">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Fitness Tracker">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#0F0F0F">
+    <meta name="description" content="Din personlige fitness tracker med træning, kostplan og progression">
+    
+    <!-- Apple Touch Icon (180x180 for iOS) -->
+    <link rel="apple-touch-icon" href="https://drive.google.com/uc?export=view&id=1O9R78krMnRCBqIb48pxGaBp8oUFksZal">
+    
+    <!-- Android Chrome Icon (192x192) -->
+    <link rel="icon" sizes="192x192" href="https://drive.google.com/uc?export=view&id=1O9R78krMnRCBqIb48pxGaBp8oUFksZal">
+    
+    <!-- Larger icon for high-res displays -->
+    <link rel="icon" sizes="512x512" href="https://drive.google.com/uc?export=view&id=1O9R78krMnRCBqIb48pxGaBp8oUFksZal">
+    
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -248,6 +272,17 @@
             border-radius: 8px;
             color: var(--text);
             font-size: 1rem;
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            background: var(--bg-dark);
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 1rem;
+            cursor: pointer;
         }
 
         .btn-add {
@@ -561,12 +596,30 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>SEB'S FITNESS TRACKER</h1>
+            <h1>FITNESS JOURNAL</h1>
         </div>
 
         <div class="nav-tabs" id="navTabs"></div>
         <div id="content"></div>
     </div>
+    
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 15, 15, 0.95); z-index: 99999; display: flex; flex-direction: column; align-items: center; justify-content: center; backdrop-filter: blur(10px);">
+        <div style="text-align: center;">
+            <!-- Animated spinner -->
+            <div style="width: 60px; height: 60px; border: 4px solid rgba(255, 57, 57, 0.2); border-top: 4px solid var(--primary); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 30px;"></div>
+            
+            <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--primary); margin-bottom: 10px; letter-spacing: 2px;">SYNKRONISERER</h2>
+            <p style="color: var(--text-dim); font-size: 0.9rem;">Henter data, vent venligst...</p>
+        </div>
+    </div>
+    
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 
     <script>
         // Data
@@ -594,10 +647,6 @@
 
         const SHOPPING = [];
 
-        // Google Sheets API
-        const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzRfI_nvXqbPLozjtpjq01-tjuktxU86WDN9F2LepEH67dtujxi0EgkOISBLrs_N7rJ/exec';
-        let isSyncing = false;
-
         // State
         let state = {
             activeTab: 'oversigt',
@@ -607,11 +656,14 @@
             goalWeight: 95,
             meals: {},
             workouts: {},
+            workoutLog: [], // Log format: [{date, day, workoutId, name, sets, reps, kg, notes}]
+            expandedWorkouts: {}, // Track which workouts are expanded for logging
             shopping: {}, // Now: {item: {checked: bool, quantity: string, unit: string, inventory: number}}
             modalShopping: {}, // Separate state for modal checkboxes
             shoppingOrder: [], // Custom order for shopping list items
             householdItems: [], // Dagligvarer like toilet paper, toothpaste etc
-            customMeals: {}, // Cleared - user will add new meals
+            customMeals: { library: [] }, // Library of all meals (not tied to days)
+            mealPlan: {}, // NEW: {day: [mealId1, mealId2, ...]} - Max 10 per day
             customWorkouts: {},
             weightHistory: [],
             editMode: {
@@ -619,42 +671,318 @@
                 meals: false,
                 workouts: false,
                 shopping: false,
-                household: false
+                household: false,
+                kostplan: false
             },
             tempWeight: 118,
             currentIngredients: [{item: '', quantity: '', unit: ''}] // Added unit field
         };
 
-        // Initialize app
-        async function initApp() {
-            console.log('🚀 Initializing Fitness Tracker...');
+        // Load from localStorage initially
+        const saved = localStorage.getItem('fitnessData');
+        if (saved) {
+            const loadedState = JSON.parse(saved);
             
-            // Try to load from cloud first
-            const cloudLoaded = await loadFromCloud();
+            // Force these values on every load
+            loadedState.activeTab = 'oversigt';
+            loadedState.editMode = {
+                stats: false,
+                meals: false,
+                workouts: false,
+                shopping: false,
+                household: false
+            };
             
-            if (!cloudLoaded) {
-                // Fallback to localStorage
-                console.log('📦 Loading from localStorage...');
-                const saved = localStorage.getItem('fitnessData');
-                if (saved) {
-                    state = {...state, ...JSON.parse(saved)};
+            // Remove workouts from loaded state - it should always be calculated from workoutLog
+            delete loadedState.workouts;
+            
+            state = {...state, ...loadedState};
+        }
+        
+        // Load from Google Sheets via API
+        async function loadFromCloud() {
+            console.log('☁️ Loading from Google Sheets via API...');
+            
+            try {
+                const response = await fetch(APPS_SCRIPT_URL);
+                const data = await response.json();
+                
+                console.log('📦 Raw data received from Google Sheets:', data);
+                    console.log('📦 Raw data received from Google Sheets:', data);
+                    
+                    if (!data) {
+                        console.error('❌ No data returned from Google Sheets (data is null/undefined)');
+                        checkDailyReset();
+                        render();
+                        return;
+                    }
+                    
+                    // Debug each sheet load individually
+                    console.group('📊 Loading data from sheets:');
+                    
+                    // WeightHistory
+                    try {
+                        if (data.weightHistory && data.weightHistory.length > 0) {
+                            console.log('✅ WeightHistory: ' + data.weightHistory.length + ' entries', data.weightHistory);
+                            state.weightHistory = data.weightHistory;
+                        } else {
+                            console.log('⚠️ WeightHistory: No data');
+                        }
+                    } catch (e) {
+                        console.error('❌ WeightHistory failed:', e);
+                    }
+                    
+                    // Meals
+                    try {
+                        if (data.meals && data.meals.length > 0) {
+                            console.log('✅ Meals: ' + data.meals.length + ' entries', data.meals);
+                            state.customMeals = { library: convertMealsFromArray(data.meals) };
+                        } else {
+                            console.log('⚠️ Meals: No data');
+                            state.customMeals = { library: [] };
+                        }
+                    } catch (e) {
+                        console.error('❌ Meals conversion failed:', e);
+                        state.customMeals = { library: [] };
+                    }
+                    
+                    // DietPlan
+                    try {
+                        if (data.dietPlan && data.dietPlan.length > 0) {
+                            console.log('✅ DietPlan: ' + data.dietPlan.length + ' entries', data.dietPlan);
+                            state.mealPlan = convertDietPlanFromArray(data.dietPlan);
+                        } else {
+                            console.log('⚠️ DietPlan: No data');
+                            state.mealPlan = {};
+                        }
+                    } catch (e) {
+                        console.error('❌ DietPlan conversion failed:', e);
+                        state.mealPlan = {};
+                    }
+                    
+                    // Workouts
+                    try {
+                        if (data.workouts && data.workouts.length > 0) {
+                            console.log('✅ Workouts: ' + data.workouts.length + ' entries', data.workouts);
+                            state.customWorkouts = convertWorkoutsFromArray(data.workouts);
+                        } else {
+                            console.log('⚠️ Workouts: No data');
+                        }
+                    } catch (e) {
+                        console.error('❌ Workouts conversion failed:', e);
+                    }
+                    
+                    // WorkoutLog
+                    try {
+                        if (data.workoutLog && data.workoutLog.length > 0) {
+                            console.log('✅ WorkoutLog: ' + data.workoutLog.length + ' entries', data.workoutLog);
+                            state.workoutLog = data.workoutLog;
+                        } else {
+                            console.log('⚠️ WorkoutLog: No data - clearing local logs');
+                            state.workoutLog = []; // Clear localStorage logs if sheet is empty
+                        }
+                    } catch (e) {
+                        console.error('❌ WorkoutLog failed:', e);
+                    }
+                    
+                    // Shopping
+                    try {
+                        if (data.shopping && data.shopping.length > 0) {
+                            console.log('✅ Shopping: ' + data.shopping.length + ' entries', data.shopping);
+                            state.shopping = convertShoppingFromArray(data.shopping);
+                            state.shoppingOrder = data.shopping.map(s => s.item);
+                        } else {
+                            console.log('⚠️ Shopping: No data');
+                        }
+                    } catch (e) {
+                        console.error('❌ Shopping conversion failed:', e);
+                    }
+                    
+                    // HouseholdItems
+                    try {
+                        if (data.householdItems && data.householdItems.length > 0) {
+                            console.log('✅ HouseholdItems: ' + data.householdItems.length + ' entries', data.householdItems);
+                            state.householdItems = data.householdItems;
+                        } else {
+                            console.log('⚠️ HouseholdItems: No data');
+                        }
+                    } catch (e) {
+                        console.error('❌ HouseholdItems failed:', e);
+                    }
+                    
+                    // Completions (only load meal completions - workout completions come from workoutLog)
+                    try {
+                        if (data.completions && data.completions.length > 0) {
+                            console.log('✅ Completions: ' + data.completions.length + ' entries', data.completions);
+                            const comps = convertCompletionsFromArray(data.completions);
+                            state.meals = comps.meals;
+                            // NOTE: state.workouts is NOT loaded from completions
+                            // It is calculated dynamically from workoutLog (today's logs only)
+                        } else {
+                            console.log('⚠️ Completions: No data - clearing local completions');
+                            state.meals = {}; // Clear localStorage completions if sheet is empty
+                        }
+                    } catch (e) {
+                        console.error('❌ Completions conversion failed:', e);
+                    }
+                    
+                    // Settings
+                    try {
+                        if (data.settings) {
+                            console.log('✅ Settings:', data.settings);
+                            state.startWeight = parseFloat(data.settings.startWeight) || state.startWeight;
+                            state.goalWeight = parseFloat(data.settings.goalWeight) || state.goalWeight;
+                            state.weight = parseFloat(data.settings.currentWeight) || state.weight;
+                            state.tempWeight = state.weight;
+                        } else {
+                            console.log('⚠️ Settings: No data');
+                        }
+                    } catch (e) {
+                        console.error('❌ Settings failed:', e);
+                    }
+                    
+                    console.groupEnd();
+                    console.log('✅ Data loading complete!');
+                    
+                    // Force default view state
+                    state.activeTab = 'oversigt';
+                    state.editMode = {
+                        stats: false,
+                        meals: false,
+                        workouts: false,
+                        shopping: false,
+                        household: false
+                    };
+                    
+                    // Save merged data to localStorage
+                    localStorage.setItem('fitnessData', JSON.stringify(state));
+                    
+                    console.log('🔄 Google Sheets data loaded - updating UI');
+                    checkDailyReset();
+                    render(); // Re-render with fresh Google Sheets data
+                    
+                    // Hide loading overlay
+                    const overlay = document.getElementById('loadingOverlay');
+                    if (overlay) {
+                        overlay.style.opacity = '0';
+                        overlay.style.transition = 'opacity 0.3s ease';
+                        setTimeout(() => overlay.remove(), 300);
+                    }
+                })
+            } catch (error) {
+                console.error('❌ Failed to load from Google Sheets:', error);
+                console.log('Using localStorage data');
+                
+                // Force defaults even on failure
+                state.activeTab = 'oversigt';
+                state.editMode = {
+                    stats: false,
+                    meals: false,
+                    workouts: false,
+                    shopping: false,
+                    household: false
+                };
+                
+                checkDailyReset();
+                render();
+                
+                // Hide loading overlay even on failure
+                const overlay = document.getElementById('loadingOverlay');
+                if (overlay) {
+                    overlay.style.opacity = '0';
+                    overlay.style.transition = 'opacity 0.3s ease';
+                    setTimeout(() => overlay.remove(), 300);
                 }
             }
-            
-            // Check daily reset
-            checkDailyReset();
-            
-            // Initial render
-            render();
-            
-            console.log('✅ App initialized');
         }
 
-        // Load from localStorage (backup - removed from sync path)
-        // const saved = localStorage.getItem('fitnessData');
-        // if (saved) {
-        //     state = {...state, ...JSON.parse(saved)};
-        // }
+        // Helper functions to convert from Google Sheets format
+        function convertMealsFromArray(mealsArray) {
+            // Convert array to library format (no days)
+            const library = [];
+            
+            mealsArray.forEach(meal => {
+                library.push({
+                    id: meal.mealId,
+                    name: meal.name,
+                    desc: meal.desc,
+                    cal: meal.cal,
+                    protein: meal.protein,
+                    carbs: meal.carbs,
+                    fat: meal.fat,
+                    ingredients: typeof meal.ingredients === 'string' ? JSON.parse(meal.ingredients) : meal.ingredients
+                });
+            });
+            
+            return library;
+        }
+
+        function convertDietPlanFromArray(dietPlanArray) {
+            // Convert array to mealPlan object {day: [mealId1, mealId2, ...]}
+            const mealPlan = {};
+            DAYS.forEach(day => { mealPlan[day] = []; });
+            
+            dietPlanArray.forEach(entry => {
+                if (entry.day && mealPlan[entry.day]) {
+                    mealPlan[entry.day].push(entry.mealId);
+                }
+            });
+            
+            return mealPlan;
+        }
+
+        function convertWorkoutsFromArray(workoutsArray) {
+            const workouts = {};
+            DAYS.forEach(day => { workouts[day] = []; });
+            
+            workoutsArray.forEach(workout => {
+                if (workout.day && workouts[workout.day]) {
+                    workouts[workout.day].push({
+                        id: workout.workoutId,
+                        name: workout.name,
+                        sets: String(workout.sets || ''),
+                        value: String(workout.value || ''),
+                        type: workout.type || 'reps',
+                        unit: String(workout.unit || ''),
+                        notes: workout.notes || ''
+                    });
+                }
+            });
+            
+            return workouts;
+        }
+
+        function convertShoppingFromArray(shoppingArray) {
+            const shopping = {};
+            
+            shoppingArray.forEach(item => {
+                shopping[item.item] = {
+                    inventory: item.inventory || 0,
+                    unit: item.unit || ''
+                    // Note: toBuy is calculated dynamically, not stored in state
+                };
+            });
+            
+            return shopping;
+        }
+
+        function convertCompletionsFromArray(completionsArray) {
+            const meals = {};
+            const workouts = {};
+            
+            completionsArray.forEach(comp => {
+                if (comp.completed) {
+                    const key = `${comp.day}-${comp.itemId}`;
+                    if (comp.type === 'meal') {
+                        meals[key] = true;
+                    } else if (comp.type === 'workout') {
+                        workouts[key] = true;
+                    }
+                }
+            });
+            
+            return { meals, workouts };
+        }
         
         // Check if we need to reset today's completions
         function checkDailyReset() {
@@ -684,30 +1012,39 @@
                 save();
             }
         }
-
+        
         function save() {
-            // Save to localStorage first (instant)
-            localStorage.setItem('fitnessData', JSON.stringify(state));
+            // Create a copy of state with editMode reset
+            const stateToSave = {
+                ...state,
+                activeTab: 'oversigt',  // Always reset to oversigt
+                editMode: {
+                    stats: false,
+                    meals: false,
+                    workouts: false,
+                    shopping: false,
+                    household: false
+                }
+            };
             
-            // Sync to cloud in background (don't block UI)
+            // Save to localStorage with defaults
+            localStorage.setItem('fitnessData', JSON.stringify(stateToSave));
+            
+            // Sync to Google Sheets in background
             syncToCloud();
         }
 
         async function syncToCloud() {
-            if (isSyncing) {
-                console.log('⏳ Sync already in progress, skipping...');
-                return;
-            }
-            
-            isSyncing = true;
-            console.log('☁️ Syncing to Google Sheets...');
+            console.log('☁️ Syncing to Google Sheets via API...');
             
             try {
                 // Prepare data for Google Sheets
                 const payload = {
                     weightHistory: state.weightHistory || [],
                     meals: convertMealsToArray(),
+                    dietPlan: convertDietPlanToArray(),
                     workouts: convertWorkoutsToArray(),
+                    workoutLog: state.workoutLog || [],
                     shopping: convertShoppingToArray(),
                     householdItems: state.householdItems || [],
                     completions: convertCompletionsToArray(),
@@ -718,233 +1055,172 @@
                     }
                 };
                 
-                const response = await fetch(GOOGLE_SHEETS_URL, {
+                const response = await fetch(APPS_SCRIPT_URL, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify(payload)
+                    body: JSON.stringify({
+                        action: 'save',
+                        payload: payload
+                    })
                 });
                 
                 const result = await response.json();
-                
-                if (result.success) {
-                    console.log('✅ Synced to cloud successfully');
-                    showSyncIndicator('success');
-                } else {
-                    console.error('❌ Cloud sync failed:', result.error);
-                    showSyncIndicator('error');
-                }
-                
+                console.log('✅ Synced to Google Sheets:', result);
             } catch (error) {
-                console.error('❌ Cloud sync error:', error);
-                showSyncIndicator('error');
-            } finally {
-                isSyncing = false;
+                console.error('❌ Sync failed:', error);
             }
         }
 
-        async function loadFromCloud() {
-            console.log('☁️ Loading from Google Sheets...');
-            
-            try {
-                const response = await fetch(GOOGLE_SHEETS_URL);
-                const result = await response.json();
-                
-                if (result.success && result.data) {
-                    console.log('✅ Loaded from cloud:', result.data);
-                    
-                    // Merge cloud data with state
-                    if (result.data.weightHistory) {
-                        state.weightHistory = result.data.weightHistory;
-                    }
-                    
-                    if (result.data.meals) {
-                        state.customMeals = convertMealsFromArray(result.data.meals);
-                    }
-                    
-                    if (result.data.workouts) {
-                        state.customWorkouts = convertWorkoutsFromArray(result.data.workouts);
-                    }
-                    
-                    if (result.data.shopping) {
-                        state.shopping = convertShoppingFromArray(result.data.shopping);
-                        state.shoppingOrder = result.data.shopping.map(s => s.item);
-                    }
-                    
-                    if (result.data.householdItems) {
-                        state.householdItems = result.data.householdItems;
-                    }
-                    
-                    if (result.data.completions) {
-                        const completions = convertCompletionsFromArray(result.data.completions);
-                        state.meals = completions.meals;
-                        state.workouts = completions.workouts;
-                    }
-                    
-                    if (result.data.settings) {
-                        state.startWeight = parseFloat(result.data.settings.startWeight) || state.startWeight;
-                        state.goalWeight = parseFloat(result.data.settings.goalWeight) || state.goalWeight;
-                        state.weight = parseFloat(result.data.settings.currentWeight) || state.weight;
-                        state.tempWeight = state.weight;
-                    }
-                    
-                    // Save to localStorage
-                    localStorage.setItem('fitnessData', JSON.stringify(state));
-                    
-                    return true;
-                } else {
-                    console.log('⚠️ No cloud data or error:', result.error);
-                    return false;
-                }
-                
-            } catch (error) {
-                console.error('❌ Failed to load from cloud:', error);
-                return false;
-            }
-        }
-
-        function showSyncIndicator(status) {
-            const indicator = document.createElement('div');
-            indicator.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                padding: 12px 20px;
-                background: ${status === 'success' ? 'var(--success)' : '#FF3939'};
-                color: white;
-                border-radius: 8px;
-                font-weight: 600;
-                z-index: 10000;
-                animation: slideIn 0.3s ease;
-            `;
-            indicator.textContent = status === 'success' ? '✅ Synced' : '❌ Sync failed';
-            
-            document.body.appendChild(indicator);
-            
-            setTimeout(() => {
-                indicator.style.opacity = '0';
-                indicator.style.transition = 'opacity 0.3s';
-                setTimeout(() => indicator.remove(), 300);
-            }, 2000);
-        }
-
-        // Helper functions to convert state to/from Google Sheets format
+        // Helper functions to convert state to Google Sheets format
         function convertMealsToArray() {
             const meals = [];
+            const mealLibrary = state.customMeals.library || [];
+            
+            mealLibrary.forEach(meal => {
+                meals.push({
+                    mealId: meal.id,
+                    name: meal.name,
+                    desc: meal.desc,
+                    cal: meal.cal || '',
+                    protein: meal.protein || '',
+                    carbs: meal.carbs || '',
+                    fat: meal.fat || '',
+                    ingredients: JSON.stringify(meal.ingredients || [])
+                });
+            });
+            
+            return meals;
+        }
+
+        function convertDietPlanToArray() {
+            const dietPlan = [];
+            
             DAYS.forEach(day => {
-                if (state.customMeals[day]) {
-                    state.customMeals[day].forEach(meal => {
-                        meals.push({
+                if (state.mealPlan[day]) {
+                    state.mealPlan[day].forEach(mealId => {
+                        dietPlan.push({
                             day: day,
-                            mealId: meal.id,
-                            name: meal.name,
-                            desc: meal.desc,
-                            cal: meal.cal || '',
-                            protein: meal.protein || '',
-                            carbs: meal.carbs || '',
-                            fat: meal.fat || '',
-                            ingredients: JSON.stringify(meal.ingredients || [])
+                            mealId: mealId
                         });
                     });
                 }
             });
-            return meals;
-        }
-
-        function convertMealsFromArray(mealsArray) {
-            const meals = {};
-            DAYS.forEach(day => { meals[day] = []; });
             
-            mealsArray.forEach(meal => {
-                if (meal.day && meals[meal.day]) {
-                    meals[meal.day].push({
-                        id: meal.mealId,
-                        name: meal.name,
-                        desc: meal.desc,
-                        cal: meal.cal,
-                        protein: meal.protein,
-                        carbs: meal.carbs,
-                        fat: meal.fat,
-                        ingredients: typeof meal.ingredients === 'string' ? JSON.parse(meal.ingredients) : meal.ingredients
-                    });
-                }
-            });
-            
-            return meals;
+            return dietPlan;
         }
 
         function convertWorkoutsToArray() {
-            const workouts = [];
-            DAYS.forEach(day => {
-                if (state.customWorkouts[day]) {
-                    state.customWorkouts[day].forEach(workout => {
-                        workouts.push({
-                            day: day,
-                            workoutId: workout.id,
-                            name: workout.name,
-                            sets: workout.sets,
-                            reps: workout.reps,
-                            notes: workout.notes || ''
-                        });
-                    });
-                }
-            });
-            return workouts;
-        }
-
-        function convertWorkoutsFromArray(workoutsArray) {
-            const workouts = {};
-            DAYS.forEach(day => { workouts[day] = []; });
+            const workoutsArray = [];
             
-            workoutsArray.forEach(workout => {
-                if (workout.day && workouts[workout.day]) {
-                    workouts[workout.day].push({
-                        id: workout.workoutId,
+            Object.entries(state.customWorkouts).forEach(([day, workouts]) => {
+                workouts.forEach(workout => {
+                    workoutsArray.push({
+                        day: day,
+                        workoutId: workout.id,
+                        originalName: workout.originalName || '',
                         name: workout.name,
                         sets: workout.sets,
-                        reps: workout.reps,
-                        notes: workout.notes
+                        value: workout.value || '',
+                        type: workout.type || 'reps',
+                        unit: workout.unit || '',
+                        notes: workout.notes || ''
                     });
-                }
+                });
             });
             
-            return workouts;
+            return workoutsArray;
         }
 
         function convertShoppingToArray() {
             const shopping = [];
-            const order = state.shoppingOrder || Object.keys(state.shopping);
             
-            order.forEach((item, index) => {
-                if (state.shopping[item]) {
-                    shopping.push({
-                        item: item,
-                        inventory: state.shopping[item].inventory || 0,
-                        unit: state.shopping[item].unit || '',
-                        orderIndex: index
+            // Aggregate to calculate toBuy
+            const aggregatedItems = {};
+            
+            // Calculate total quantity needed from meals
+            DAYS.forEach(day => {
+                if (state.customMeals[day]) {
+                    state.customMeals[day].forEach(meal => {
+                        if (meal.ingredients) {
+                            meal.ingredients.forEach(ing => {
+                                if (ing.item) {
+                                    if (!aggregatedItems[ing.item]) {
+                                        aggregatedItems[ing.item] = {
+                                            totalQuantity: 0,
+                                            unit: ing.unit || ''
+                                        };
+                                    }
+                                    const qty = parseFloat(ing.quantity);
+                                    if (!isNaN(qty)) {
+                                        aggregatedItems[ing.item].totalQuantity += qty;
+                                    }
+                                    if (!aggregatedItems[ing.item].unit && ing.unit) {
+                                        aggregatedItems[ing.item].unit = ing.unit;
+                                    }
+                                }
+                            });
+                        }
                     });
                 }
             });
             
-            return shopping;
-        }
-
-        function convertShoppingFromArray(shoppingArray) {
-            const shopping = {};
+            // Add household items total quantity
+            if (state.householdItems && state.householdItems.length > 0) {
+                state.householdItems.forEach(item => {
+                    if (!aggregatedItems[item.name]) {
+                        aggregatedItems[item.name] = {
+                            totalQuantity: 0,
+                            unit: item.unit || ''
+                        };
+                    }
+                    const qty = parseFloat(item.quantity);
+                    if (!isNaN(qty)) {
+                        aggregatedItems[item.name].totalQuantity = qty;
+                    }
+                });
+            }
             
-            shoppingArray.forEach(item => {
-                shopping[item.item] = {
-                    inventory: item.inventory || 0,
-                    unit: item.unit || ''
-                };
+            // Ensure all aggregated items exist in state.shopping
+            Object.keys(aggregatedItems).forEach(item => {
+                if (!state.shopping[item]) {
+                    state.shopping[item] = {
+                        inventory: 0,
+                        unit: aggregatedItems[item].unit
+                    };
+                }
             });
+            
+            // Build shopping array with toBuy calculated
+            const allItems = Object.keys(aggregatedItems);
+            const order = state.shoppingOrder || allItems;
+            
+            // Include all items that have aggregated data
+            allItems.forEach(item => {
+                const inventory = state.shopping[item]?.inventory || 0;
+                const totalNeeded = aggregatedItems[item]?.totalQuantity || 0;
+                const toBuy = Math.max(0, Math.round(totalNeeded - inventory));
+                const orderIndex = order.indexOf(item);
+                
+                shopping.push({
+                    item: item,
+                    inventory: inventory,
+                    toBuy: toBuy,
+                    unit: state.shopping[item]?.unit || aggregatedItems[item]?.unit || '',
+                    orderIndex: orderIndex === -1 ? 999 : orderIndex
+                });
+            });
+            
+            // Sort by orderIndex
+            shopping.sort((a, b) => a.orderIndex - b.orderIndex);
             
             return shopping;
         }
 
         function convertCompletionsToArray() {
             const completions = [];
+            const today = new Date().toISOString().split('T')[0];
             
             // Meals completions
             Object.keys(state.meals).forEach(key => {
@@ -954,46 +1230,56 @@
                         day: day,
                         type: 'meal',
                         itemId: itemId,
-                        completed: true
+                        completed: true,
+                        completedDate: today
                     });
                 }
             });
             
-            // Workouts completions
-            Object.keys(state.workouts).forEach(key => {
-                if (state.workouts[key]) {
-                    const [day, itemId] = key.split('-');
-                    completions.push({
-                        day: day,
-                        type: 'workout',
-                        itemId: itemId,
-                        completed: true
-                    });
+            // Workouts completions - dynamically calculate from today's workoutLog
+            // Get unique workout+day combinations that have logs today
+            const workoutsLoggedToday = new Set();
+            (state.workoutLog || []).forEach(log => {
+                if (log.date === today) {
+                    const key = `${log.day}-${log.name}`;
+                    workoutsLoggedToday.add(key);
                 }
             });
+            
+            // Convert to completions array
+            workoutsLoggedToday.forEach(key => {
+                const [day, itemId] = key.split('-');
+                completions.push({
+                    day: day,
+                    type: 'workout',
+                    itemId: itemId,
+                    completed: true,
+                    completedDate: today
+                });
+            });
+            
+            console.log('📊 Workout completions to sync (based on today\'s logs):', completions.filter(c => c.type === 'workout'));
             
             return completions;
         }
 
-        function convertCompletionsFromArray(completionsArray) {
-            const meals = {};
-            const workouts = {};
-            
-            completionsArray.forEach(comp => {
-                if (comp.completed) {
-                    const key = `${comp.day}-${comp.itemId}`;
-                    if (comp.type === 'meal') {
-                        meals[key] = true;
-                    } else if (comp.type === 'workout') {
-                        workouts[key] = true;
-                    }
-                }
-            });
-            
-            return { meals, workouts };
-        }
-
+        let hasInitialRendered = false;
+        
         function render() {
+            // ONLY force defaults on FIRST render (page load)
+            if (!hasInitialRendered) {
+                console.log('🎯 Initial render - forcing defaults');
+                state.activeTab = 'oversigt';
+                state.editMode = {
+                    stats: false,
+                    meals: false,
+                    workouts: false,
+                    shopping: false,
+                    household: false
+                };
+                hasInitialRendered = true;
+            }
+            
             renderNav();
             renderContent();
             initDragAndDrop();
@@ -1200,7 +1486,8 @@
             nav.innerHTML = `
                 <button class="nav-tab ${state.activeTab === 'oversigt' ? 'active' : ''}" onclick="setTab('oversigt')">Oversigt</button>
                 <button class="nav-tab ${state.activeTab === 'træning' ? 'active' : ''}" onclick="setTab('træning')">Træning</button>
-                <button class="nav-tab ${state.activeTab === 'kost' ? 'active' : ''}" onclick="setTab('kost')">Kostplan</button>
+                <button class="nav-tab ${state.activeTab === 'kostplan' ? 'active' : ''}" onclick="setTab('kostplan')">Kostplan</button>
+                <button class="nav-tab ${state.activeTab === 'kost' ? 'active' : ''}" onclick="setTab('kost')">Måltider</button>
                 <button class="nav-tab ${state.activeTab === 'dagligvarer' ? 'active' : ''}" onclick="setTab('dagligvarer')">Dagligvarer</button>
                 <button class="nav-tab ${state.activeTab === 'indkøb' ? 'active' : ''}" onclick="setTab('indkøb')">Indkøb</button>
             `;
@@ -1214,6 +1501,7 @@
                 content.innerHTML = renderKost();
                 renderIngredientRows(); // Render after DOM is ready
             }
+            if (state.activeTab === 'kostplan') content.innerHTML = renderKostplan();
             if (state.activeTab === 'dagligvarer') content.innerHTML = renderDagligvarer();
             if (state.activeTab === 'indkøb') content.innerHTML = renderIndkøb();
         }
@@ -1222,11 +1510,18 @@
             const container = document.getElementById('ingredientRows');
             if (!container) return;
             
+            // Save which field currently has focus (before re-render)
+            const activeElement = document.activeElement;
+            let focusIdx = null;
+            let focusField = null;
+            
+            if (activeElement && activeElement.dataset && activeElement.dataset.idx !== undefined) {
+                focusIdx = parseInt(activeElement.dataset.idx);
+                focusField = activeElement.dataset.field;
+            }
+            
             // Ensure at least one empty row
-            if (state.currentIngredients.length === 0 || 
-                state.currentIngredients[state.currentIngredients.length - 1].item || 
-                state.currentIngredients[state.currentIngredients.length - 1].quantity ||
-                state.currentIngredients[state.currentIngredients.length - 1].unit) {
+            if (state.currentIngredients.length === 0) {
                 state.currentIngredients.push({item: '', quantity: '', unit: ''});
             }
             
@@ -1241,39 +1536,48 @@
             });
             
             container.innerHTML = state.currentIngredients.map((ing, idx) => `
-                <div class="ingredient-row">
-                    <input 
-                        type="text" 
-                        list="ingredientSuggestions"
-                        value="${ing.item || ''}"
-                        placeholder="Ingrediens (f.eks. æbler)"
-                        data-idx="${idx}"
-                        data-field="item"
-                        onblur="updateIngredient(${idx}, 'item', this.value)"
-                        onkeyup="if(event.key==='Enter') updateIngredient(${idx}, 'item', this.value)"
-                    />
-                    <input 
-                        type="text"
-                        value="${ing.quantity || ''}"
-                        placeholder="Antal (f.eks. 2)"
-                        data-idx="${idx}"
-                        data-field="quantity"
-                        onblur="updateIngredient(${idx}, 'quantity', this.value)"
-                        onkeyup="if(event.key==='Enter') updateIngredient(${idx}, 'quantity', this.value)"
-                    />
-                    <input 
-                        type="text"
-                        value="${ing.unit || ''}"
-                        placeholder="Enhed (f.eks. stk)"
-                        list="unitSuggestions"
-                        data-idx="${idx}"
-                        data-field="unit"
-                        onblur="updateIngredient(${idx}, 'unit', this.value)"
-                        onkeyup="if(event.key==='Enter') updateIngredient(${idx}, 'unit', this.value)"
-                    />
+                <div class="ingredient-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr 40px; gap: 10px; margin-bottom: 10px; align-items: end;">
+                    <div>
+                        ${idx === 0 ? '<label style="display: block; color: var(--text-dim); font-size: 0.85rem; margin-bottom: 5px;">Ingredienser</label>' : ''}
+                        <input 
+                            type="text" 
+                            list="ingredientSuggestions"
+                            value="${ing.item || ''}"
+                            data-idx="${idx}"
+                            data-field="item"
+                            oninput="updateIngredientValue(${idx}, 'item', this.value)"
+                            onkeydown="handleIngredientKeydown(event, ${idx}, 'item')"
+                            style="width: 100%; padding: 10px; background: var(--bg-dark); border: 2px solid var(--border); border-radius: 8px; color: var(--text); font-size: 1rem;"
+                        />
+                    </div>
+                    <div>
+                        ${idx === 0 ? '<label style="display: block; color: var(--text-dim); font-size: 0.85rem; margin-bottom: 5px;">Antal</label>' : ''}
+                        <input 
+                            type="text"
+                            value="${ing.quantity || ''}"
+                            data-idx="${idx}"
+                            data-field="quantity"
+                            oninput="updateIngredientValue(${idx}, 'quantity', this.value)"
+                            onkeydown="handleIngredientKeydown(event, ${idx}, 'quantity')"
+                            style="width: 100%; padding: 10px; background: var(--bg-dark); border: 2px solid var(--border); border-radius: 8px; color: var(--text); font-size: 1rem;"
+                        />
+                    </div>
+                    <div>
+                        ${idx === 0 ? '<label style="display: block; color: var(--text-dim); font-size: 0.85rem; margin-bottom: 5px;">Enhed</label>' : ''}
+                        <input 
+                            type="text"
+                            value="${ing.unit || ''}"
+                            list="unitSuggestions"
+                            data-idx="${idx}"
+                            data-field="unit"
+                            oninput="updateIngredientValue(${idx}, 'unit', this.value)"
+                            onkeydown="handleIngredientKeydown(event, ${idx}, 'unit')"
+                            style="width: 100%; padding: 10px; background: var(--bg-dark); border: 2px solid var(--border); border-radius: 8px; color: var(--text); font-size: 1rem;"
+                        />
+                    </div>
                     ${state.currentIngredients.length > 1 ? `
                         <button type="button" class="delete-icon" onclick="removeIngredientRow(${idx})">✕</button>
-                    ` : '<div style="width: 30px"></div>'}
+                    ` : '<div style="width: 40px"></div>'}
                 </div>
             `).join('') + `
                 <datalist id="ingredientSuggestions">
@@ -1292,25 +1596,82 @@
                     <option value="dåse">
                 </datalist>
             `;
+            
+            // Restore focus after re-render
+            if (focusIdx !== null && focusField !== null) {
+                setTimeout(() => {
+                    const inputs = document.querySelectorAll('#ingredientRows input[type="text"]');
+                    const targetInput = Array.from(inputs).find(input => 
+                        input.dataset.idx == focusIdx && input.dataset.field === focusField
+                    );
+                    if (targetInput) {
+                        targetInput.focus();
+                        // Place cursor at end
+                        targetInput.setSelectionRange(targetInput.value.length, targetInput.value.length);
+                    }
+                }, 0);
+            }
         }
 
-        function updateIngredient(idx, field, value) {
-            // Save the currently focused element
-            const activeElement = document.activeElement;
-            const wasIngredientInput = activeElement && activeElement.getAttribute('data-idx') == idx;
-            
+        function updateIngredientValue(idx, field, value) {
+            // Update the value
             state.currentIngredients[idx][field] = value;
             
-            // Check if we need to add a new row
+            // Check if we need to add a new empty row
+            const lastRow = state.currentIngredients[state.currentIngredients.length - 1];
+            const isLastRow = idx === state.currentIngredients.length - 1;
+            
+            // If typing in last row and it now has content, add new empty row
+            if (isLastRow && (lastRow.item || lastRow.quantity || lastRow.unit)) {
+                state.currentIngredients.push({item: '', quantity: '', unit: ''});
+                renderIngredientRows();
+            }
+        }
+
+        function checkAddNewRow() {
+            // Check if last row has content and add new row if needed
             const lastRow = state.currentIngredients[state.currentIngredients.length - 1];
             if (lastRow.item || lastRow.quantity || lastRow.unit) {
                 state.currentIngredients.push({item: '', quantity: '', unit: ''});
                 renderIngredientRows();
+            }
+        }
+
+        function handleIngredientKeydown(event, idx, field) {
+            if (event.key === 'Tab') {
+                // Just save current value
+                const value = event.target.value;
+                state.currentIngredients[idx][field] = value;
                 
-                // Restore focus if it was an ingredient input
-                if (wasIngredientInput) {
-                    const inputs = document.querySelectorAll(`input[data-idx="${idx}"]`);
-                    if (inputs[0]) inputs[0].focus();
+                // Let Tab work naturally - no re-render, no preventDefault
+                
+            } else if (event.key === 'Enter') {
+                event.preventDefault();
+                
+                // Save current value
+                const value = event.target.value;
+                state.currentIngredients[idx][field] = value;
+                
+                // Check if this is the last field
+                const allInputs = Array.from(document.querySelectorAll('#ingredientRows input[type="text"]'));
+                const currentIndex = allInputs.indexOf(event.target);
+                const nextInput = allInputs[currentIndex + 1];
+                
+                if (nextInput) {
+                    // Move to next field
+                    nextInput.focus();
+                } else {
+                    // Last field - add new row
+                    state.currentIngredients.push({item: '', quantity: '', unit: ''});
+                    renderIngredientRows();
+                    
+                    // Focus first field of new row
+                    setTimeout(() => {
+                        const newInputs = document.querySelectorAll('#ingredientRows input[type="text"]');
+                        if (newInputs[newInputs.length - 3]) {
+                            newInputs[newInputs.length - 3].focus();
+                        }
+                    }, 50);
                 }
             }
         }
@@ -1346,13 +1707,10 @@
         }
 
         function renderOversigt() {
-            // Get converted meal names to hide originals
-            const convertedMealNames = new Set();
-            if (state.customMeals[state.selectedDay]) {
-                state.customMeals[state.selectedDay].forEach(m => {
-                    if (m.originalName) convertedMealNames.add(m.originalName);
-                });
-            }
+            // Get meals from kostplan for this day
+            const mealLibrary = state.customMeals.library || [];
+            const dayMealIds = state.mealPlan[state.selectedDay] || [];
+            const allMeals = dayMealIds.map(id => mealLibrary.find(m => m.id === id)).filter(Boolean);
             
             // Get converted workout names to hide originals
             const convertedWorkoutNames = new Set();
@@ -1363,16 +1721,34 @@
             }
             
             // Filter out converted defaults
-            const defaultMeals = (MEALS[state.selectedDay] || []).filter(m => !convertedMealNames.has(m.name));
             const defaultWorkouts = (WORKOUTS[state.selectedDay] || []).filter(w => !convertedWorkoutNames.has(w.name));
             
-            const allMeals = [...defaultMeals, ...(state.customMeals[state.selectedDay] || [])];
             const allWorkouts = [...defaultWorkouts, ...(state.customWorkouts[state.selectedDay] || [])];
             
-            const completedMeals = allMeals.filter(m => state.meals[`${state.selectedDay}-${m.name || m.id}`]).length;
-            const completedWorkouts = allWorkouts.filter(w => state.workouts[`${state.selectedDay}-${w.name || w.id}`]).length;
-            const mealProg = allMeals.length > 0 ? (completedMeals / allMeals.length) * 100 : 0;
-            const workoutProg = allWorkouts.length > 0 ? (completedWorkouts / allWorkouts.length) * 100 : 0;
+            const completedMeals = allMeals.filter(m => state.meals[`${state.selectedDay}-${m.id}`]).length;
+            
+            // Calculate completedWorkouts based on today's workoutLog
+            const today = new Date().toISOString().split('T')[0];
+            const completedWorkouts = allWorkouts.filter(w => {
+                const workoutName = w.name || w.id;
+                return (state.workoutLog || []).some(log => 
+                    log.name === workoutName && 
+                    log.day === state.selectedDay && 
+                    log.date === today
+                );
+            }).length;
+            
+            const mealProg = allMeals.length > 0 ? (completedMeals / allMeals.length) * 100 : 100;
+            const workoutProg = allWorkouts.length > 0 ? (completedWorkouts / allWorkouts.length) * 100 : 100;
+
+            // Calculate total macros for oversigt
+            const totals = allMeals.reduce((acc, m) => {
+                acc.cal += m.cal || 0;
+                acc.protein += m.protein || 0;
+                acc.carbs += m.carbs || 0;
+                acc.fat += m.fat || 0;
+                return acc;
+            }, {cal: 0, protein: 0, carbs: 0, fat: 0});
 
             return `
                 <div class="card">
@@ -1380,7 +1756,16 @@
                         ${state.editMode.stats ? '✓ Færdig' : '✏️ Rediger'}
                     </button>
                     
-                    <h2>Dine Stats</h2>
+                    <h2 style="display: flex; align-items: center; gap: 8px;">
+                        Vægt Statistik
+                        ${state.weightHistory.length > 0 ? `
+                            <div onclick="showWeightGraph()" style="display: inline-flex; align-items: center; justify-content: center; padding: 0px 6px 4px 6px; margin-top: -4px; background: rgba(255, 57, 57, 0.1); border: 2px solid var(--primary); border-radius: 6px; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='rgba(255, 57, 57, 0.2)'; this.style.borderColor='var(--secondary)'" onmouseout="this.style.background='rgba(255, 57, 57, 0.1)'; this.style.borderColor='var(--primary)'">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                </svg>
+                            </div>
+                        ` : ''}
+                    </h2>
                     
                     ${state.editMode.stats ? `
                         <div class="weight-adjuster">
@@ -1426,75 +1811,127 @@
                             </div>
                         </div>
                     </div>
-
-                    ${state.weightHistory.length > 0 ? `
-                        <div style="margin-top: 30px">
-                            <h3 style="font-size: 1.2rem; margin-bottom: 15px; color: var(--secondary)">Vægtprogression</h3>
-                            <div class="graph-trigger" onclick="showWeightGraph()">
-                                <p style="color: var(--secondary); font-weight: 700; font-size: 1.2rem; margin-bottom: 5px">📊 KLIK FOR AT SE GRAF</p>
-                                <p style="color: var(--text-dim); font-size: 0.9rem">${state.weightHistory.length} målinger registreret</p>
-                            </div>
-                        </div>
-                    ` : `
-                        <div style="margin-top: 30px; padding: 20px; background: rgba(255, 165, 0, 0.05); border-radius: 12px; text-align: center">
-                            <p style="color: var(--text-dim)">📈 Opdater din vægt for at se progression</p>
-                        </div>
-                    `}
                 </div>
 
                 <div class="card">
-                    <h2>${state.selectedDay}</h2>
                     ${renderDaySelector()}
-                    <p style="margin-bottom: 10px">Måltider: ${completedMeals}/${allMeals.length}</p>
+                    <p style="margin-bottom: 10px">Kostplan: ${completedMeals}/${allMeals.length}</p>
                     <div class="progress-bar"><div class="progress-fill" style="width: ${mealProg}%; background: ${getProgressColor(mealProg)}"></div></div>
                     <p style="margin: 20px 0 10px">Træning: ${completedWorkouts}/${allWorkouts.length}</p>
                     <div class="progress-bar"><div class="progress-fill" style="width: ${workoutProg}%; background: ${getProgressColor(workoutProg)}"></div></div>
 
                     <div class="overview-section">
-                        <h3>Måltider</h3>
-                        ${allMeals.length === 0 ? '<p style="color: var(--text-dim)">Ingen måltider</p>' : allMeals.map(m => {
-                            const key = `${state.selectedDay}-${m.name || m.id}`;
+                        <h3>Kostplan${allMeals.length > 0 ? `<span style="font-weight: normal; font-size: 1.2rem;"> - Kcal: ${totals.cal} | P: ${totals.protein}g | K: ${totals.carbs}g | F: ${totals.fat}g</span>` : ''}</h3>
+                        ${allMeals.length === 0 ? '<p style="color: var(--text-dim)">Ingen måltider i planen</p>' : allMeals.map(m => {
+                            const key = `${state.selectedDay}-${m.id}`;
                             return `<div class="mini-card ${state.meals[key] ? 'completed' : ''}" style="display: flex; justify-content: space-between; align-items: center;">
                                 <div style="flex: 1;">
                                     <strong>${m.name}</strong><br>
                                     <span style="color: var(--text-dim); font-size: 0.9rem">${m.desc}</span>
                                     ${m.cal ? `<br><span style="color: var(--secondary); font-size: 0.85rem">${m.cal} kcal | P: ${m.protein || 0}g | K: ${m.carbs || 0}g | F: ${m.fat || 0}g</span>` : ''}
                                 </div>
-                                <div class="checkbox ${state.meals[key] ? 'checked' : ''}" onclick="toggleMeal('${m.name || m.id}')"></div>
+                                <div class="checkbox ${state.meals[key] ? 'checked' : ''}" onclick="toggleMeal('${m.id}')"></div>
                             </div>`;
                         }).join('')}
                     </div>
 
                     <div class="overview-section">
                         <h3>Træning</h3>
-                        ${allWorkouts.length === 0 ? '<p style="color: var(--text-dim)">Hviledag 🎉</p>' : allWorkouts.map(w => {
-                            const key = `${state.selectedDay}-${w.name || w.id}`;
-                            return `<div class="mini-card ${state.workouts[key] ? 'completed' : ''}" style="display: flex; justify-content: space-between; align-items: center;">
-                                <div style="flex: 1;">
-                                    <strong>${w.name}</strong><br>
-                                    <span style="color: var(--text-dim); font-size: 0.9rem">${w.sets} sæt × ${w.reps}</span>
-                                    ${w.notes ? `<br><span style="font-style: italic; color: var(--text-dim); font-size: 0.85rem">(${w.notes})</span>` : ''}
-                                </div>
-                                <div class="checkbox ${state.workouts[key] ? 'checked' : ''}" onclick="toggleWorkout('${w.name || w.id}')"></div>
-                            </div>`;
-                        }).join('')}
+                        ${allWorkouts.length === 0 ? '<p style="color: var(--text-dim)">Hviledag</p>' : `
+                            <div style="list-style: none; padding: 0;">
+                                ${allWorkouts.map(w => {
+                                    const key = `${state.selectedDay}-${w.name || w.id}`;
+                                    const numSets = parseInt(w.sets) || 3;
+                                    const isExpanded = state.expandedWorkouts && state.expandedWorkouts[key];
+                                    
+                                    // Check if logged today
+                                    const today = new Date().toISOString().split('T')[0];
+                                    const hasLoggedToday = (state.workoutLog || []).some(log => 
+                                        log.name === w.name && log.day === state.selectedDay && log.date === today
+                                    );
+                                    
+                                    return `
+                                    <div style="margin-bottom: 15px; padding: 15px; background: rgba(255, 165, 0, 0.05); border-radius: 12px; border-left: 4px solid var(--secondary); opacity: ${hasLoggedToday ? '0.5' : '1'};">
+                                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: ${isExpanded && !hasLoggedToday ? '15px' : '0'};">
+                                            <div style="flex: 1;">
+                                                <strong style="font-size: 1.1rem;">${w.name}</strong><br>
+                                                <span style="color: var(--text-dim); font-size: 0.9rem;">Mål: ${
+                                                    (w.type === 'tid' || w.type === 'time') 
+                                                    ? `${w.sets} sæt × ${w.value || w.reps || '?'} ${w.unit || 'sek'}`
+                                                    : `${w.sets} sæt × ${w.value || w.reps || '?'}${(w.unit || w.kg) ? ` @ ${w.unit || w.kg}kg` : ''}`
+                                                }</span>
+                                                ${w.notes ? `<br><span style="font-style: italic; color: var(--text-dim); font-size: 0.85rem;">(${w.notes})</span>` : ''}
+                                            </div>
+                                            <div style="display: flex; align-items: center; gap: 10px;">
+                                                <button class="edit-btn" onclick="showWorkoutHistory('${w.name || w.id}', '${state.selectedDay}')" style="background: rgba(255, 165, 0, 0.2); color: var(--secondary); padding: 6px 10px;">📊</button>
+                                                ${hasLoggedToday ? `
+                                                    <div class="checkbox checked" onclick="deleteWorkoutLogToday('${w.name}', '${state.selectedDay}')" style="cursor: pointer;"></div>
+                                                ` : `
+                                                  <button onclick="toggleWorkoutExpand('${key}')" style="background: var(--primary); color: white; border: none; border-radius: 6px; padding: 5px; cursor: pointer; font-weight: 600; font-size: 0.8rem; width: 29px; height: 29px; display: flex; align-items: center; justify-content: center;">
+                                                      ${isExpanded ? '▲' : '▼'}
+                                                  </button>
+                                                `}
+                                            </div>
+                                        </div>
+                                        
+                                        ${isExpanded && !hasLoggedToday ? `
+                                            <div style="margin-top: 15px; padding-top: 15px; border-top: 2px solid var(--border);">
+                                                ${Array.from({length: numSets}, (_, setIdx) => {
+                                                    const workoutType = w.type || 'reps';
+                                                    const valueLabel = workoutType === 'tid' ? 'Tid' : 'Reps';
+                                                    const unitLabel = workoutType === 'tid' ? 'Enhed' : 'Kg';
+                                                    // Backward compatibility: use reps/kg if value/unit not available
+                                                    const valuePlaceholder = w.value || w.reps || '';
+                                                    const unitPlaceholder = w.unit || w.kg || '';
+                                                    
+                                                    // Build unit field HTML
+                                                    let unitFieldHTML = '';
+                                                    if (workoutType === 'tid') {
+                                                        unitFieldHTML = `
+                                                            <select id="log_${key}_unit_${setIdx}" style="width: 100%; padding: 8px; background: var(--bg-dark); border: 2px solid var(--border); border-radius: 8px; color: var(--text); font-size: 1rem; text-align: center;">
+                                                                <option value="sek" ${unitPlaceholder === 'sek' ? 'selected' : ''}>Sekunder</option>
+                                                                <option value="min" ${unitPlaceholder === 'min' ? 'selected' : ''}>Minutter</option>
+                                                                <option value="timer" ${unitPlaceholder === 'timer' ? 'selected' : ''}>Timer</option>
+                                                            </select>
+                                                        `;
+                                                    } else {
+                                                        unitFieldHTML = `<input type="text" id="log_${key}_unit_${setIdx}" value="${unitPlaceholder}" style="width: 100%; padding: 8px; background: var(--bg-dark); border: 2px solid var(--border); border-radius: 8px; color: var(--text); font-size: 1rem; text-align: center;">`;
+                                                    }
+                                                    
+                                                    return `
+                                                    <div style="display: grid; grid-template-columns: 60px 1fr 1fr 2fr; gap: 12px; align-items: center; padding: 12px; margin-bottom: 10px; background: rgba(0, 0, 0, 0.3); border-radius: 8px;">
+                                                        <strong style="color: var(--secondary); font-size: 1.1rem;">Sæt ${setIdx + 1}</strong>
+                                                        <div>
+                                                            <label style="display: block; color: var(--text-dim); font-size: 0.75rem; margin-bottom: 5px;">${valueLabel}</label>
+                                                            <input type="text" id="log_${key}_value_${setIdx}" value="${valuePlaceholder}" style="width: 100%; padding: 8px; background: var(--bg-dark); border: 2px solid var(--border); border-radius: 8px; color: var(--text); font-size: 1rem; text-align: center;">
+                                                        </div>
+                                                        <div>
+                                                            <label style="display: block; color: var(--text-dim); font-size: 0.75rem; margin-bottom: 5px;">${unitLabel}</label>
+                                                            ${unitFieldHTML}
+                                                        </div>
+                                                        <div>
+                                                            <label style="display: block; color: var(--text-dim); font-size: 0.75rem; margin-bottom: 5px;">Note</label>
+                                                            <input type="text" id="log_${key}_note_${setIdx}" style="width: 100%; padding: 8px; background: var(--bg-dark); border: 2px solid var(--border); border-radius: 8px; color: var(--text); font-size: 0.9rem;">
+                                                        </div>
+                                                    </div>
+                                                `}).join('')}
+                                                <button class="btn-add" onclick="logWorkoutFromInline('${w.name || w.id}', '${key}', ${numSets}, '${w.type || 'reps'}')" style="width: 100%; margin-top: 10px; padding: 12px; font-size: 1rem;">
+                                                    ✓ Log Træning
+                                                </button>
+                                            </div>
+                                        ` : ''}
+                                    </div>
+                                `}).join('')}
+                            </div>
+                        `}
                     </div>
                 </div>
             `;
         }
 
         function renderKost() {
-            // Get converted meal names to hide originals
-            const convertedNames = new Set();
-            if (state.customMeals[state.selectedDay]) {
-                state.customMeals[state.selectedDay].forEach(m => {
-                    if (m.originalName) convertedNames.add(m.originalName);
-                });
-            }
-            
-            // Filter out converted default meals
-            const defaultMeals = (MEALS[state.selectedDay] || []).filter(m => !convertedNames.has(m.name));
-            const allMeals = [...defaultMeals, ...(state.customMeals[state.selectedDay] || [])];
+            // Get all custom meals (not per day anymore - it's a library)
+            const allMeals = state.customMeals.library || [];
             
             // Calculate total macros
             const totals = allMeals.reduce((acc, m) => {
@@ -1511,19 +1948,48 @@
                         ${state.editMode.meals ? '✓ Færdig' : '✏️ Rediger'}
                     </button>
                     
-                    <h2>Kostplan</h2>
-                    ${allMeals.length > 0 ? `
-                        <p style="color: var(--secondary); font-size: 0.95rem; margin: 10px 0; font-weight: 600;">
-                            Kcal: ${totals.cal} | P: ${totals.protein}g | K: ${totals.carbs}g | F: ${totals.fat}g
-                        </p>
-                    ` : ''}
-                    ${renderDaySelector()}
+                    <h2>Måltider</h2>
+                    
+                    <div class="add-form ${state.editMode.meals ? '' : 'hidden'}" style="margin-bottom: 30px;">
+                        <h3 id="mealFormTitle">+ Tilføj Måltid</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Måltid navn</label>
+                                <input type="text" id="mealName">
+                            </div>
+                            <div class="form-group">
+                                <label>Beskrivelse</label>
+                                <input type="text" id="mealDesc">
+                            </div>
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Kalorier</label>
+                                <input type="number" id="mealCal">
+                            </div>
+                            <div class="form-group">
+                                <label>Protein</label>
+                                <input type="number" id="mealProtein">
+                            </div>
+                            <div class="form-group">
+                                <label>Kulhydrater</label>
+                                <input type="number" id="mealCarbs">
+                            </div>
+                            <div class="form-group">
+                                <label>Fedt</label>
+                                <input type="number" id="mealFat">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div id="ingredientRows"></div>
+                        </div>
+                        <input type="hidden" id="editingMealId" value="">
+                        <button class="btn-add" id="mealSaveBtn" onclick="saveMeal()">+ Tilføj Måltid</button>
+                    </div>
+
                     <ul class="item-list">
                         ${allMeals.map((m, i) => {
-                            const key = `${state.selectedDay}-${m.name || m.id}`;
-                            const isCustom = !!m.id;
-                            const editId = m.id || m.name; // Always use ID if available
-                            return `<li class="item ${state.meals[key] ? 'completed' : ''} ${state.editMode.meals ? 'draggable' : ''}" ${state.editMode.meals ? 'draggable="true"' : ''} data-index="${i}" data-type="meal">
+                            return `<li class="item ${state.editMode.meals ? 'draggable' : ''}" ${state.editMode.meals ? 'draggable="true"' : ''} data-index="${i}" data-type="meal">
                                 <div style="display: flex; align-items: center; flex: 1;">
                                     ${state.editMode.meals ? '<span class="drag-handle">⋮⋮</span>' : ''}
                                     <div style="flex: 1">
@@ -1533,53 +1999,14 @@
                                     </div>
                                 </div>
                                 <div style="display: flex; align-items: center; gap: 10px">
-                                    <div class="checkbox ${state.meals[key] ? 'checked' : ''}" onclick="toggleMeal('${m.name || m.id}')"></div>
                                     ${state.editMode.meals ? `
-                                        <button class="edit-btn" onclick="loadMealToEdit('${editId}', ${isCustom})">Ret</button>
-                                        <button class="delete-icon" onclick="confirmDeleteMeal('${editId}', ${isCustom})">✕</button>
+                                        <button class="edit-btn" onclick="loadMealToEdit(${i})">Ret</button>
+                                        <button class="delete-icon" onclick="confirmDeleteMeal(${i})">✕</button>
                                     ` : ''}
                                 </div>
                             </li>`;
                         }).join('')}
                     </ul>
-
-                    <div class="add-form ${state.editMode.meals ? '' : 'hidden'}">
-                        <h3 id="mealFormTitle">+ Tilføj Måltid</h3>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label>Måltid navn</label>
-                                <input type="text" id="mealName" placeholder="F.eks. Morgenmad">
-                            </div>
-                            <div class="form-group">
-                                <label>Beskrivelse</label>
-                                <input type="text" id="mealDesc" placeholder="F.eks. Skyr med bær">
-                            </div>
-                        </div>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label>Kalorier (kcal)</label>
-                                <input type="number" id="mealCal" placeholder="300">
-                            </div>
-                            <div class="form-group">
-                                <label>Protein (g)</label>
-                                <input type="number" id="mealProtein" placeholder="25">
-                            </div>
-                            <div class="form-group">
-                                <label>Kulhydrater (g)</label>
-                                <input type="number" id="mealCarbs" placeholder="40">
-                            </div>
-                            <div class="form-group">
-                                <label>Fedt (g)</label>
-                                <input type="number" id="mealFat" placeholder="10">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Ingredienser</label>
-                            <div id="ingredientRows"></div>
-                        </div>
-                        <input type="hidden" id="editingMealId" value="">
-                        <button class="btn-add" id="mealSaveBtn" onclick="saveMeal()">+ Tilføj Måltid</button>
-                    </div>
                 </div>
             `;
         }
@@ -1605,57 +2032,250 @@
                     
                     <h2>Træning</h2>
                     ${renderDaySelector()}
-                    ${allWorkouts.length === 0 ? '<p style="color: var(--text-dim); margin: 20px 0">Hviledag 🎉</p>' : `
-                    <ul class="item-list">
-                        ${allWorkouts.map((w, i) => {
-                            const key = `${state.selectedDay}-${w.name || w.id}`;
-                            const isCustom = !!w.id;
-                            const editId = w.id || w.name; // Always use ID if available
-                            return `<li class="item ${state.workouts[key] ? 'completed' : ''} ${state.editMode.workouts ? 'draggable' : ''}" ${state.editMode.workouts ? 'draggable="true"' : ''} data-index="${i}" data-type="workout">
-                                <div style="display: flex; align-items: center; flex: 1;">
-                                    ${state.editMode.workouts ? '<span class="drag-handle">⋮⋮</span>' : ''}
-                                    <div style="flex: 1">
-                                        <strong>${w.name}</strong><br>
-                                        <span style="color: var(--text-dim); font-size: 0.9rem">${w.sets} sæt × ${w.reps}</span>
-                                        ${w.notes ? `<br><span style="font-style: italic; color: var(--text-dim); font-size: 0.85rem">(${w.notes})</span>` : ''}
-                                    </div>
-                                </div>
-                                <div style="display: flex; align-items: center; gap: 10px">
-                                    <div class="checkbox ${state.workouts[key] ? 'checked' : ''}" onclick="toggleWorkout('${w.name || w.id}')"></div>
-                                    ${state.editMode.workouts ? `
-                                        <button class="edit-btn" onclick="loadWorkoutToEdit('${editId}', ${isCustom})">Ret</button>
-                                        <button class="delete-icon" onclick="confirmDeleteWorkout('${editId}', ${isCustom})">✕</button>
-                                    ` : ''}
-                                </div>
-                            </li>`;
-                        }).join('')}
-                    </ul>`}
-
-                    <div class="add-form ${state.editMode.workouts ? '' : 'hidden'}">
+                    
+                    <div class="add-form ${state.editMode.workouts ? '' : 'hidden'}" style="margin-bottom: 30px;">
                         <h3 id="workoutFormTitle">+ Tilføj Øvelse</h3>
-                        <div class="form-grid">
+                        <div style="display: grid; grid-template-columns: 1.5fr 0.7fr 0.8fr 0.8fr 0.8fr 1.5fr; gap: 15px; margin-bottom: 20px;">
                             <div class="form-group">
                                 <label>Øvelse</label>
-                                <input type="text" id="exName" placeholder="F.eks. Bicep Curls">
+                                <input type="text" id="exName">
                             </div>
                             <div class="form-group">
                                 <label>Sæt</label>
-                                <input type="text" id="exSets" placeholder="3">
+                                <input type="text" id="exSets">
                             </div>
                             <div class="form-group">
-                                <label>Reps/Tid</label>
-                                <input type="text" id="exReps" placeholder="10-12 eller 30 sek">
+                                <label>Type</label>
+                                <select id="exType" onchange="updateWorkoutTypeFields()">
+                                    <option value="reps">Reps</option>
+                                    <option value="tid">Tid</option>
+                                </select>
+                            </div>
+                            <div class="form-group" id="valueField">
+                                <label id="valueLabel">Reps</label>
+                                <input type="text" id="exValue">
+                            </div>
+                            <div class="form-group" id="unitField">
+                                <label id="unitLabel">Kg</label>
+                                <input type="text" id="exUnit">
                             </div>
                             <div class="form-group">
-                                <label>Noter (valgfri)</label>
-                                <input type="text" id="exNotes" placeholder="per arm, let vægt">
+                                <label>Noter</label>
+                                <input type="text" id="exNotes">
                             </div>
                         </div>
                         <input type="hidden" id="editingWorkoutId" value="">
                         <button class="btn-add" id="workoutSaveBtn" onclick="saveWorkout()">+ Tilføj Øvelse</button>
                     </div>
+                    
+                    ${allWorkouts.length === 0 ? '<p style="color: var(--text-dim); margin: 20px 0">Hviledag</p>' : `
+                    <ul class="item-list" style="list-style: none; padding: 0;">
+                        ${allWorkouts.map((w, i) => {
+                            const key = `${state.selectedDay}-${w.name || w.id}`;
+                            const isCustom = !!w.id;
+                            const editId = w.id || w.name;
+                            
+                            return `
+                            <li style="margin-bottom: 15px; padding: 15px; background: rgba(255, 165, 0, 0.05); border-radius: 12px; border-left: 4px solid var(--secondary);" class="${state.editMode.workouts ? 'draggable' : ''}" ${state.editMode.workouts ? 'draggable="true"' : ''} data-index="${i}" data-type="workout">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div style="flex: 1;">
+                                        ${state.editMode.workouts ? '<span class="drag-handle" style="margin-right: 10px;">⋮⋮</span>' : ''}
+                                        <strong style="font-size: 1.1rem;">${w.name}</strong><br>
+                                        <span style="color: var(--text-dim); font-size: 0.9rem;">Mål: ${
+                                            (w.type === 'tid' || w.type === 'time') 
+                                            ? `${w.sets} sæt × ${w.value || w.reps || '?'} ${w.unit || 'sek'}`
+                                            : `${w.sets} sæt × ${w.value || w.reps || '?'}${(w.unit || w.kg) ? ` @ ${w.unit || w.kg}kg` : ''}`
+                                        }</span>
+                                        ${w.notes ? `<br><span style="font-style: italic; color: var(--text-dim); font-size: 0.85rem;">(${w.notes})</span>` : ''}
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        ${!state.editMode.workouts ? `
+                                            <button class="edit-btn" onclick="showWorkoutHistory('${w.name || w.id}', '${state.selectedDay}')" style="background: rgba(255, 165, 0, 0.2); color: var(--secondary); padding: 8px 12px;">📊</button>
+                                        ` : ''}
+                                        ${state.editMode.workouts ? `
+                                            <button class="edit-btn" onclick="loadWorkoutToEdit('${editId}', ${isCustom})">Ret</button>
+                                            <button class="delete-icon" onclick="confirmDeleteWorkout('${editId}', ${isCustom})">✕</button>
+                                        ` : ''}
+                                    </div>
+                                </div>
+                            </li>
+                            `;
+                        }).join('')}
+                    </ul>`}
                 </div>
             `;
+        }
+
+        function renderKostplan() {
+            const mealLibrary = state.customMeals.library || [];
+            const dayMealIds = state.mealPlan[state.selectedDay] || [];
+            const selectedMeals = dayMealIds.map(id => mealLibrary.find(m => m.id === id)).filter(Boolean);
+            
+            // Calculate total macros for the day
+            const totals = selectedMeals.reduce((acc, m) => {
+                acc.cal += m.cal || 0;
+                acc.protein += m.protein || 0;
+                acc.carbs += m.carbs || 0;
+                acc.fat += m.fat || 0;
+                return acc;
+            }, {cal: 0, protein: 0, carbs: 0, fat: 0});
+            
+            const canAddMore = dayMealIds.length < 10;
+            
+            return `
+                <div class="card">
+                    <button class="edit-toggle ${state.editMode.kostplan ? 'active' : ''}" onclick="toggleEditMode('kostplan')">
+                        ${state.editMode.kostplan ? '✓ Færdig' : '✏️ Rediger'}
+                    </button>
+                    
+                    <h2>Kostplan${selectedMeals.length > 0 ? `<span style="font-weight: normal; font-size: 1.5rem;"> - Kcal: ${totals.cal} | P: ${totals.protein}g | K: ${totals.carbs}g | F: ${totals.fat}g</span>` : ''}</h2>
+                    ${renderDaySelector()}
+                    
+                    ${state.editMode.kostplan ? `
+                        <div style="margin-bottom: 30px;">
+                            ${canAddMore ? `
+                                <button class="btn-add" onclick="showMealSelector()">
+                                    + Tilføj Måltid
+                                </button>
+                            ` : `
+                                <p style="color: var(--primary); text-align: center; padding: 10px; background: rgba(255, 57, 57, 0.1); border-radius: 8px;">
+                                    ⚠️ Max 10 måltider per dag
+                                </p>
+                            `}
+                        </div>
+                    ` : ''}
+                    
+                    ${selectedMeals.length === 0 ? `
+                        <p style="color: var(--text-dim); text-align: center; padding: 40px 20px">
+                            🍽️ Ingen måltider i planen endnu
+                        </p>
+                    ` : `
+                        <ul class="item-list">
+                            ${selectedMeals.map((m, i) => `
+                                <li class="item">
+                                    <div style="flex: 1">
+                                        <strong>${m.name}</strong><br>
+                                        <span style="color: var(--text-dim); font-size: 0.9rem">${m.desc}</span>
+                                        ${m.cal ? `<br><span style="color: var(--secondary); font-size: 0.85rem">${m.cal} kcal | P: ${m.protein || 0}g | K: ${m.carbs || 0}g | F: ${m.fat || 0}g</span>` : ''}
+                                    </div>
+                                    ${state.editMode.kostplan ? `
+                                        <button class="delete-icon" onclick="removeMealFromPlan(${i})">✕</button>
+                                    ` : ''}
+                                </li>
+                            `).join('')}
+                        </ul>
+                    `}
+                </div>
+            `;
+        }
+
+        function showMealSelector() {
+            const mealLibrary = state.customMeals.library || [];
+            
+            if (mealLibrary.length === 0) {
+                alert('Du har ingen måltider endnu. Gå til Måltider fanen for at oprette nogle!');
+                return;
+            }
+            
+            // Filter out meals that are already added to this day
+            const dayMealIds = state.mealPlan[state.selectedDay] || [];
+            const availableMeals = mealLibrary.filter(meal => !dayMealIds.includes(meal.id));
+            
+            if (availableMeals.length === 0) {
+                alert('Alle dine måltider er allerede tilføjet til denne dag!');
+                return;
+            }
+            
+            const modalHTML = `
+                <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15,15,15,0.95); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px" onclick="this.remove()">
+                    <div class="card" style="max-width: 600px; width: 100%; max-height: 80vh; overflow-y: auto;" onclick="event.stopPropagation()">
+                        <h2 style="margin-bottom: 20px;">Vælg Måltid</h2>
+                        <ul class="item-list">
+                            ${availableMeals.map((m, i) => `
+                                <li class="item" style="cursor: pointer;" onclick="addMealToPlan(${m.id}); this.closest('[style*=fixed]').remove();">
+                                    <div style="flex: 1">
+                                        <strong>${m.name}</strong><br>
+                                        <span style="color: var(--text-dim); font-size: 0.9rem">${m.desc}</span>
+                                        ${m.cal ? `<br><span style="color: var(--secondary); font-size: 0.85rem">${m.cal} kcal | P: ${m.protein || 0}g | K: ${m.carbs || 0}g | F: ${m.fat || 0}g</span>` : ''}
+                                    </div>
+                                </li>
+                            `).join('')}
+                        </ul>
+                        <button class="btn-add" onclick="this.closest('[style*=fixed]').remove()" style="margin-top: 20px; background: var(--border); color: var(--text);">
+                            Annuller
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
+        }
+
+        function addMealToPlan(mealId) {
+            if (!state.mealPlan[state.selectedDay]) {
+                state.mealPlan[state.selectedDay] = [];
+            }
+            
+            if (state.mealPlan[state.selectedDay].length >= 10) {
+                alert('Max 10 måltider per dag!');
+                return;
+            }
+            
+            state.mealPlan[state.selectedDay].push(mealId);
+            
+            // Shopping list is now manual - no automatic sync
+            // updateShoppingFromKostplan();
+            
+            save();
+            render();
+        }
+
+        function removeMealFromPlan(index) {
+            if (!state.mealPlan[state.selectedDay]) return;
+            
+            state.mealPlan[state.selectedDay].splice(index, 1);
+            
+            // Shopping list is now manual - no automatic sync
+            // updateShoppingFromKostplan();
+            
+            save();
+            render();
+        }
+
+        function updateShoppingFromKostplan() {
+            // Clear all meal-based ingredients from shopping
+            Object.keys(state.shopping).forEach(item => {
+                delete state.shopping[item];
+            });
+            
+            // Add ingredients from all meals in kostplan (all days)
+            const mealLibrary = state.customMeals.library || [];
+            const allMealIds = new Set();
+            
+            DAYS.forEach(day => {
+                if (state.mealPlan[day]) {
+                    state.mealPlan[day].forEach(mealId => {
+                        allMealIds.add(mealId);
+                    });
+                }
+            });
+            
+            // For each unique meal in the plan, add its ingredients
+            allMealIds.forEach(mealId => {
+                const meal = mealLibrary.find(m => m.id === mealId);
+                if (meal && meal.ingredients) {
+                    meal.ingredients.forEach(ing => {
+                        if (ing.item) {
+                            if (!state.shopping[ing.item]) {
+                                state.shopping[ing.item] = {
+                                    inventory: 0,
+                                    unit: ing.unit || ''
+                                };
+                            }
+                        }
+                    });
+                }
+            });
         }
 
         function renderDagligvarer() {
@@ -1666,7 +2286,41 @@
                     </button>
                     
                     <h2>Dagligvarer</h2>
-                    <p style="color: var(--text-dim); margin-bottom: 20px">Toilet papir, tandpasta, shampoo osv.</p>
+                    
+                    <div class="add-form ${state.editMode.household ? '' : 'hidden'}" style="margin-bottom: 30px;">
+                        <h3 id="householdFormTitle">Tilføj Dagligvare</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Navn</label>
+                                <input type="text" id="householdName">
+                            </div>
+                            <div class="form-group">
+                                <label>Antal</label>
+                                <input type="number" step="1" id="householdQuantity">
+                            </div>
+                            <div class="form-group">
+                                <label>Enhed</label>
+                                <input type="text" id="householdUnit" list="unitSuggestions">
+                                <datalist id="unitSuggestions">
+                                    <option value="stk">
+                                    <option value="g">
+                                    <option value="kg">
+                                    <option value="ml">
+                                    <option value="l">
+                                    <option value="dl">
+                                    <option value="spsk">
+                                    <option value="tsk">
+                                    <option value="pakke">
+                                    <option value="dåse">
+                                    <option value="ruller">
+                                    <option value="tube">
+                                    <option value="flaske">
+                                </datalist>
+                            </div>
+                        </div>
+                        <input type="hidden" id="editingHouseholdIndex" value="">
+                        <button class="btn-add" id="householdSaveBtn" onclick="saveHouseholdItem()">+ Tilføj Vare</button>
+                    </div>
                     
                     ${state.householdItems.length === 0 ? `
                         <p style="color: var(--text-dim); text-align: center; padding: 40px 20px">
@@ -1692,41 +2346,6 @@
                             }).join('')}
                         </ul>
                     `}
-                    
-                    <div class="add-form ${state.editMode.household ? '' : 'hidden'}">
-                        <h3 id="householdFormTitle">Tilføj Dagligvare</h3>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label>Navn</label>
-                                <input type="text" id="householdName" placeholder="f.eks. Toilet papir">
-                            </div>
-                            <div class="form-group">
-                                <label>Antal</label>
-                                <input type="number" step="1" id="householdQuantity" placeholder="f.eks. 12">
-                            </div>
-                            <div class="form-group">
-                                <label>Enhed</label>
-                                <input type="text" id="householdUnit" list="unitSuggestions" placeholder="f.eks. ruller">
-                                <datalist id="unitSuggestions">
-                                    <option value="stk">
-                                    <option value="g">
-                                    <option value="kg">
-                                    <option value="ml">
-                                    <option value="l">
-                                    <option value="dl">
-                                    <option value="spsk">
-                                    <option value="tsk">
-                                    <option value="pakke">
-                                    <option value="dåse">
-                                    <option value="ruller">
-                                    <option value="tube">
-                                    <option value="flaske">
-                                </datalist>
-                            </div>
-                        </div>
-                        <input type="hidden" id="editingHouseholdIndex" value="">
-                        <button class="btn-add" id="householdSaveBtn" onclick="saveHouseholdItem()">+ Tilføj Vare</button>
-                    </div>
                 </div>
             `;
         }
@@ -1750,6 +2369,14 @@
             } else {
                 // Add new
                 state.householdItems.push({name, quantity, unit});
+            }
+            
+            // Add to shopping state if not already there
+            if (!state.shopping[name]) {
+                state.shopping[name] = {
+                    inventory: 0,
+                    unit: unit || ''
+                };
             }
             
             // Reset form
@@ -1787,40 +2414,47 @@
             // Aggregate all ingredients from all meals across all days
             const aggregatedItems = {};
             
+            // Get ingredients from mealPlan (NEW SYSTEM)
+            const mealLibrary = state.customMeals.library || [];
+            
             DAYS.forEach(day => {
-                if (state.customMeals[day]) {
-                    state.customMeals[day].forEach(meal => {
-                        if (meal.ingredients) {
-                            meal.ingredients.forEach(ing => {
-                                if (ing.item) {
-                                    if (!aggregatedItems[ing.item]) {
-                                        aggregatedItems[ing.item] = {
-                                            quantity: 0,
-                                            unit: ing.unit || '',
-                                            checked: state.shopping[ing.item]?.checked || false,
-                                            inventory: state.shopping[ing.item]?.inventory || 0,
-                                            type: 'ingredient'
-                                        };
-                                    }
-                                    
-                                    // Add quantities (try to parse as number, otherwise keep as string)
-                                    const qty = parseFloat(ing.quantity);
-                                    if (!isNaN(qty)) {
-                                        aggregatedItems[ing.item].quantity += qty;
-                                    } else {
-                                        // If not a number, just append
-                                        aggregatedItems[ing.item].quantity = ing.quantity;
-                                    }
-                                    
-                                    // Use the first unit we encounter
-                                    if (!aggregatedItems[ing.item].unit && ing.unit) {
-                                        aggregatedItems[ing.item].unit = ing.unit;
-                                    }
+                // Get meal IDs for this day from mealPlan
+                const dayMealIds = state.mealPlan[day] || [];
+                
+                // For each meal ID, find the meal in library and add its ingredients
+                dayMealIds.forEach(mealId => {
+                    const meal = mealLibrary.find(m => m.id === mealId);
+                    
+                    if (meal && meal.ingredients) {
+                        meal.ingredients.forEach(ing => {
+                            if (ing.item) {
+                                if (!aggregatedItems[ing.item]) {
+                                    aggregatedItems[ing.item] = {
+                                        quantity: 0,
+                                        unit: ing.unit || '',
+                                        checked: state.shopping[ing.item]?.checked || false,
+                                        inventory: state.shopping[ing.item]?.inventory || 0,
+                                        type: 'ingredient'
+                                    };
                                 }
-                            });
-                        }
-                    });
-                }
+                                
+                                // Add quantities (try to parse as number, otherwise keep as string)
+                                const qty = parseFloat(ing.quantity);
+                                if (!isNaN(qty)) {
+                                    aggregatedItems[ing.item].quantity += qty;
+                                } else {
+                                    // If not a number, just append
+                                    aggregatedItems[ing.item].quantity = ing.quantity;
+                                }
+                                
+                                // Use the first unit we encounter
+                                if (!aggregatedItems[ing.item].unit && ing.unit) {
+                                    aggregatedItems[ing.item].unit = ing.unit;
+                                }
+                            }
+                        });
+                    }
+                });
             });
             
             // Add household items
@@ -1868,20 +2502,21 @@
             
             return `
                 <div class="card">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                        <button class="edit-toggle ${state.editMode.shopping ? 'active' : ''}" onclick="toggleEditMode('shopping')">
-                            ${state.editMode.shopping ? '✓ Færdig' : '✏️ Rediger'}
-                        </button>
-                        <button onclick="showCleanShoppingList()" style="background: var(--success); padding: 8px 16px; border: none; border-radius: 8px; color: var(--text); font-weight: 600; cursor: pointer; font-size: 0.9rem;">
-                            🛒 Vis Liste
-                        </button>
-                    </div>
+                    <h2 style="display: flex; align-items: center; gap: 8px;">
+                        Indkøbsliste
+                        <div onclick="showCleanShoppingList()" style="display: inline-flex; align-items: center; justify-content: center; padding: 2px 5px 3px 5px; background: rgba(255, 57, 57, 0.1); border: 2px solid var(--primary); border-radius: 6px; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='rgba(255, 57, 57, 0.2)'; this.style.borderColor='var(--secondary)'" onmouseout="this.style.background='rgba(255, 57, 57, 0.1)'; this.style.borderColor='var(--primary)'">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                        </div>
+                    </h2>
                     
-                    <h2>Indkøbsliste</h2>
-                    <p style="color: var(--text-dim); margin-bottom: 20px">
-                        ${totalIngredients} ingredienser + ${totalHousehold} dagligvarer
-                        ${state.editMode.shopping ? ' • Træk for at ændre rækkefølge' : ''}
-                    </p>
+                    <button class="edit-toggle ${state.editMode.shopping ? 'active' : ''}" onclick="toggleEditMode('shopping')" style="margin-bottom: 20px;">
+                        ${state.editMode.shopping ? '✓ Færdig' : '✏️ Rediger'}
+                    </button>
+                    
                     ${itemKeys.length === 0 ? `
                         <p style="color: var(--text-dim); text-align: center; padding: 40px 20px">
                             📝 Ingen varer endnu<br>
@@ -1915,12 +2550,12 @@
                                         </div>
                                         ${state.editMode.shopping ? `
                                             <input type="number" step="1" value="${Math.round(data.inventory || 0)}" 
-                                                   onchange="updateInventory('${item}', this.value)" 
-                                                   onmousedown="event.stopPropagation()"
-                                                   onclick="event.stopPropagation(); this.select();"
-                                                   onfocus="this.select()"
-                                                   style="width: 60px; padding: 5px; background: var(--bg-dark); border: 1px solid var(--border); border-radius: 6px; color: var(--text); text-align: center; margin: 0 auto;"
-                                                   placeholder="0">
+                                                  onchange="updateInventory('${item}', this.value)" 
+                                                  onmousedown="event.stopPropagation()"
+                                                  onclick="event.stopPropagation(); this.select();"
+                                                  onfocus="this.select()"
+                                                  style="width: 60px; padding: 5px; background: var(--bg-dark); border: 1px solid var(--border); border-radius: 6px; color: var(--text); text-align: center; margin: 0 auto;"
+                                                  placeholder="0">
                                         ` : `<div class="quantity" style="text-align: center;">${data.inventory > 0 ? Math.round(data.inventory) : '-'}</div>`}
                                         <div class="quantity" style="text-align: center; font-weight: ${(typeof needed === 'number' && needed > 0) || (typeof needed === 'string' && needed !== '-' && data.inventory > 0) ? '700' : 'normal'}; color: ${(typeof needed === 'number' && needed > 0) || (typeof needed === 'string' && needed !== '-' && data.inventory > 0) ? 'var(--primary)' : 'var(--text-dim)'}">
                                             ${displayNeeded}
@@ -1945,45 +2580,52 @@
                 state.shopping[item] = {checked: false, inventory: 0};
             }
             state.shopping[item].inventory = Math.round(parseFloat(value) || 0);
-            save();
-            render();
+            // Don't save or render - only update state
+            // Saving happens when user clicks "Færdig" in toggleEditMode
         }
 
         function showCleanShoppingList() {
             // Aggregate all items (same logic as renderIndkøb)
             const aggregatedItems = {};
             
+            // Get ingredients from mealPlan (NEW SYSTEM)
+            const mealLibrary = state.customMeals.library || [];
+            
             DAYS.forEach(day => {
-                if (state.customMeals[day]) {
-                    state.customMeals[day].forEach(meal => {
-                        if (meal.ingredients) {
-                            meal.ingredients.forEach(ing => {
-                                if (ing.item) {
-                                    if (!aggregatedItems[ing.item]) {
-                                        aggregatedItems[ing.item] = {
-                                            quantity: 0,
-                                            unit: ing.unit || '',
-                                            checked: state.modalShopping[ing.item]?.checked || false,
-                                            inventory: state.shopping[ing.item]?.inventory || 0,
-                                            type: 'ingredient'
-                                        };
-                                    }
-                                    
-                                    const qty = parseFloat(ing.quantity);
-                                    if (!isNaN(qty)) {
-                                        aggregatedItems[ing.item].quantity += qty;
-                                    } else {
-                                        aggregatedItems[ing.item].quantity = ing.quantity;
-                                    }
-                                    
-                                    if (!aggregatedItems[ing.item].unit && ing.unit) {
-                                        aggregatedItems[ing.item].unit = ing.unit;
-                                    }
+                // Get meal IDs for this day from mealPlan
+                const dayMealIds = state.mealPlan[day] || [];
+                
+                // For each meal ID, find the meal in library and add its ingredients
+                dayMealIds.forEach(mealId => {
+                    const meal = mealLibrary.find(m => m.id === mealId);
+                    
+                    if (meal && meal.ingredients) {
+                        meal.ingredients.forEach(ing => {
+                            if (ing.item) {
+                                if (!aggregatedItems[ing.item]) {
+                                    aggregatedItems[ing.item] = {
+                                        quantity: 0,
+                                        unit: ing.unit || '',
+                                        checked: state.modalShopping[ing.item]?.checked || false,
+                                        inventory: state.shopping[ing.item]?.inventory || 0,
+                                        type: 'ingredient'
+                                    };
                                 }
-                            });
-                        }
-                    });
-                }
+                                
+                                const qty = parseFloat(ing.quantity);
+                                if (!isNaN(qty)) {
+                                    aggregatedItems[ing.item].quantity += qty;
+                                } else {
+                                    aggregatedItems[ing.item].quantity = ing.quantity;
+                                }
+                                
+                                if (!aggregatedItems[ing.item].unit && ing.unit) {
+                                    aggregatedItems[ing.item].unit = ing.unit;
+                                }
+                            }
+                        });
+                    }
+                });
             });
             
             // Add household items
@@ -2011,6 +2653,15 @@
             // Get items in custom order
             let itemKeys = Object.keys(aggregatedItems);
             
+            // Filter out items where needed amount is 0 or less
+            itemKeys = itemKeys.filter(item => {
+                const data = aggregatedItems[item];
+                const needed = typeof data.quantity === 'number' 
+                    ? Math.round(data.quantity - (data.inventory || 0))
+                    : (data.inventory > 0 ? Math.round(data.inventory) : 0);
+                return typeof needed === 'number' ? needed > 0 : false;
+            });
+            
             if (state.shoppingOrder && state.shoppingOrder.length > 0) {
                 itemKeys.sort((a, b) => {
                     const indexA = state.shoppingOrder.indexOf(a);
@@ -2024,8 +2675,14 @@
                 itemKeys.sort();
             }
             
+            // Check if there are any items to buy
+            if (itemKeys.length === 0) {
+                alert('Ingen varer at købe! Alt er fyldt op.');
+                return;
+            }
+            
             const modalHTML = `
-                <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px" onclick="closeShoppingModal()">
+                <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15,15,15,0.95); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px" onclick="closeShoppingModal()">
                     <div class="card" style="max-width: 600px; width: 100%; max-height: 90vh; overflow-y: auto; background: var(--bg); border: 2px solid var(--primary);" onclick="event.stopPropagation()">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 2px solid var(--primary); padding-bottom: 15px;">
                             <h2 style="margin: 0; color: var(--primary);">🛒 Indkøbsliste</h2>
@@ -2135,7 +2792,7 @@
                 state.modalShopping[item] = {checked: false};
             }
             state.modalShopping[item].checked = !state.modalShopping[item].checked;
-            save();
+            // Don't save here - only save when clicking "Køb"
             
             // Update the modal item visually
             const itemDiv = checkboxElement.closest('[style*="grid-template-columns"]');
@@ -2257,10 +2914,352 @@
         }
 
         function toggleWorkout(name) {
-            const key = `${state.selectedDay}-${name}`;
-            state.workouts[key] = !state.workouts[key];
+            // Open logging modal instead of simple toggle
+            openWorkoutLogModal(name, state.selectedDay);
+        }
+        
+        function toggleWorkoutExpand(key) {
+            if (!state.expandedWorkouts) state.expandedWorkouts = {};
+            state.expandedWorkouts[key] = !state.expandedWorkouts[key];
+            render();
+        }
+        
+        function logWorkoutFromInline(workoutName, key, numSets, workoutType) {
+            // Collect data from all sets
+            const today = new Date().toISOString().split('T')[0];
+            
+            if (!state.workoutLog) state.workoutLog = [];
+            
+            let loggedCount = 0;
+            for (let i = 0; i < numSets; i++) {
+                const valueInput = document.getElementById(`log_${key}_value_${i}`);
+                const unitInput = document.getElementById(`log_${key}_unit_${i}`);
+                const noteInput = document.getElementById(`log_${key}_note_${i}`);
+                
+                const value = valueInput ? valueInput.value : '';
+                const unit = unitInput ? unitInput.value : '';
+                const note = noteInput ? noteInput.value : '';
+                
+                if (value) { // Only log if value is filled
+                    state.workoutLog.push({
+                        date: today,
+                        day: state.selectedDay,
+                        workoutId: workoutName,
+                        name: workoutName,
+                        set: i + 1,
+                        value: value,
+                        type: workoutType || 'reps',
+                        unit: unit || '',
+                        notes: note || ''
+                    });
+                    loggedCount++;
+                }
+            }
+            
+            if (loggedCount > 0) {
+                console.log(`✅ Logged ${loggedCount} sets for ${workoutName}`);
+                
+                // Collapse the workout
+                state.expandedWorkouts[key] = false;
+                
+                // Save and render
+                save();
+                render();
+            } else {
+                alert('Udfyld mindst 1 sæt');
+            }
+        }
+        
+        function deleteWorkoutLogToday(workoutName, day) {
+            const today = new Date().toISOString().split('T')[0];
+            
+            if (confirm(`Slet dagens træning for ${workoutName}?`)) {
+                // Remove all logs for this workout, day, and today
+                state.workoutLog = (state.workoutLog || []).filter(log => 
+                    !(log.name === workoutName && log.day === day && log.date === today)
+                );
+                
+                save();
+                render();
+            }
+        }
+        
+        function openWorkoutLogModal(nameOrId, day) {
+            // Find the workout
+            const allWorkouts = [...(WORKOUTS[day] || []), ...(state.customWorkouts[day] || [])];
+            const workout = allWorkouts.find(w => (w.name || w.id) == nameOrId);
+            
+            if (!workout) return;
+            
+            // Parse number of sets
+            const numSets = parseInt(workout.sets) || 3;
+            
+            const modalHTML = `
+                <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15,15,15,0.95); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px" onclick="closeWorkoutLogModal()">
+                    <div class="card" style="max-width: 700px; width: 100%; max-height: 90vh; overflow-y: auto; background: var(--bg); border: 2px solid var(--primary);" onclick="event.stopPropagation()">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 2px solid var(--primary); padding-bottom: 15px;">
+                            <h2 style="margin: 0; color: var(--primary);">💪 ${workout.name}</h2>
+                            <button class="delete-btn" onclick="closeWorkoutLogModal()">✕</button>
+                        </div>
+                        
+                        <p style="color: var(--text-dim); margin-bottom: 20px; font-size: 0.95rem;">
+                            <strong>Mål:</strong> ${workout.sets} sæt × ${workout.reps}${workout.kg ? ` @ ${workout.kg}kg` : ''}
+                            ${workout.notes ? `<br><em>${workout.notes}</em>` : ''}
+                        </p>
+                        
+                        <div id="setLogRows" style="margin-bottom: 20px;">
+                            ${Array.from({length: numSets}, (_, i) => `
+                                <div style="display: grid; grid-template-columns: 50px 1fr 1fr 2fr; gap: 12px; align-items: center; padding: 15px; margin-bottom: 12px; background: rgba(255, 165, 0, 0.05); border-radius: 12px; border-left: 4px solid var(--secondary);">
+                                    <strong style="color: var(--secondary); font-size: 1.3rem; text-align: center;">Sæt ${i + 1}</strong>
+                                    <div>
+                                        <label style="display: block; color: var(--text-dim); font-size: 0.85rem; margin-bottom: 5px;">Reps</label>
+                                        <input type="number" id="setReps${i}" value="${workout.reps.split('-')[0] || workout.reps}" placeholder="${workout.reps}" style="width: 100%; padding: 10px; background: var(--bg-dark); border: 2px solid var(--border); border-radius: 8px; color: var(--text); font-size: 1.1rem; text-align: center;">
+                                    </div>
+                                    <div>
+                                        <label style="display: block; color: var(--text-dim); font-size: 0.85rem; margin-bottom: 5px;">Kg</label>
+                                        <input type="number" step="0.5" id="setKg${i}" value="${workout.kg || ''}" placeholder="${workout.kg || '0'}" style="width: 100%; padding: 10px; background: var(--bg-dark); border: 2px solid var(--border); border-radius: 8px; color: var(--text); font-size: 1.1rem; text-align: center;">
+                                    </div>
+                                    <div>
+                                        <label style="display: block; color: var(--text-dim); font-size: 0.85rem; margin-bottom: 5px;">Note</label>
+                                        <input type="text" id="setNote${i}" placeholder="God form, træt..." style="width: 100%; padding: 10px; background: var(--bg-dark); border: 2px solid var(--border); border-radius: 8px; color: var(--text); font-size: 0.95rem;">
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                        
+                        <button class="btn-add" onclick="saveWorkoutLog('${workout.name || workout.id}', '${day}', ${numSets})" style="width: 100%; padding: 15px; font-size: 1.1rem;">
+                            ✓ Log Træning
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
+        }
+        
+        function closeWorkoutLogModal() {
+            const modal = document.querySelector('[style*="position: fixed"]');
+            if (modal) modal.remove();
+        }
+        
+        function saveWorkoutLog(workoutName, day, numSets) {
+            // Collect data from all sets
+            const today = new Date().toISOString().split('T')[0];
+            
+            if (!state.workoutLog) state.workoutLog = [];
+            
+            for (let i = 0; i < numSets; i++) {
+                const repsInput = document.getElementById(`setReps${i}`);
+                const kgInput = document.getElementById(`setKg${i}`);
+                const noteInput = document.getElementById(`setNote${i}`);
+                
+                const reps = repsInput ? repsInput.value : '';
+                const kg = kgInput ? kgInput.value : '';
+                const note = noteInput ? noteInput.value : '';
+                
+                if (reps) { // Only log if reps is filled
+                    state.workoutLog.push({
+                        date: today,
+                        day: day,
+                        workoutId: workoutName,
+                        name: workoutName,
+                        set: i + 1,  // Changed from setNumber to set
+                        reps: reps,
+                        kg: kg || '',
+                        notes: note || ''
+                    });
+                }
+            }
+            
+            console.log(`✅ Logged ${numSets} sets for ${workoutName}`);
+            
+            // Close modal
+            closeWorkoutLogModal();
+            
+            // Save and render
             save();
             render();
+        }
+
+        function logWorkout(workoutId) {
+            // This function is now deprecated - keeping for compatibility
+            console.warn('logWorkout is deprecated - use openWorkoutLogModal instead');
+        }
+
+        function showWorkoutHistory(nameOrId, day) {
+            // Find workout to get name
+            const allWorkouts = [...(WORKOUTS[day] || []), ...(state.customWorkouts[day] || [])];
+            const workout = allWorkouts.find(w => (w.name || w.id) == nameOrId);
+            
+            if (!workout) return;
+            
+            // Filter logs for this exercise on this day
+            const logs = (state.workoutLog || []).filter(log => 
+                log.name === workout.name && log.day === day
+            );
+            
+            if (logs.length === 0) {
+                alert('Ingen log endnu for denne øvelse');
+                return;
+            }
+            
+            // Group logs by workout+date combination
+            const groupedLogs = {};
+            logs.forEach(log => {
+                const groupKey = `${log.name}-${log.date}`;
+                if (!groupedLogs[groupKey]) {
+                    groupedLogs[groupKey] = {
+                        workoutName: log.name,
+                        date: log.date,
+                        sets: []
+                    };
+                }
+                groupedLogs[groupKey].sets.push(log);
+            });
+            
+            // Sort groups by date (newest first)
+            const sortedGroups = Object.values(groupedLogs).sort((a, b) => 
+                new Date(b.date) - new Date(a.date)
+            );
+            
+            const modalHTML = `
+                <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15,15,15,0.95); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px" onclick="this.remove()">
+                    <div class="card" style="max-width: 700px; width: 100%; max-height: 90vh; overflow-y: auto; background: var(--bg); border: 2px solid var(--primary);" onclick="event.stopPropagation()">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 2px solid var(--primary); padding-bottom: 15px;">
+                            <h2 style="margin: 0; color: var(--primary);">📊 ${workout.name}</h2>
+                            <button class="delete-btn" onclick="this.closest('[style*=fixed]').remove()">✕</button>
+                        </div>
+                        
+                        <p style="color: var(--text-dim); margin-bottom: 20px;">Progressionslog for ${day}</p>
+                        
+                        <div style="margin-bottom: 20px;">
+                            ${sortedGroups.map((group, groupIdx) => {
+                                const sortedSets = group.sets.sort((a, b) => a.set - b.set);
+                                // Calculate volume only for reps type workouts
+                                const totalVolume = sortedSets.reduce((sum, log) => {
+                                    const logType = log.type || 'reps';
+                                    if (logType === 'reps') {
+                                        const unit = log.unit || log.kg;
+                                        const value = log.value || log.reps;
+                                        const vol = unit && value ? parseFloat(unit) * parseFloat(value) : 0;
+                                        return sum + vol;
+                                    }
+                                    return sum;
+                                }, 0);
+                                
+                                return `
+                                <div style="margin-bottom: 10px;">
+                                    <div onclick="toggleHistoryGroup('group_${groupIdx}')" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 15px; background: rgba(255, 165, 0, 0.1); border-radius: 8px; cursor: pointer; border-left: 3px solid var(--secondary); transition: all 0.2s;">
+                                        <div style="display: flex; align-items: center; gap: 12px; flex: 1;">
+                                            <span id="arrow_group_${groupIdx}" style="font-size: 1rem; transition: transform 0.3s;">▼</span>
+                                            <div style="flex: 1;">
+                                                <strong style="color: var(--primary); font-size: 1.1rem;">${group.date}</strong>
+                                            </div>
+                                            <span style="color: var(--text-dim); font-size: 0.85rem;">${sortedSets.length} sæt${totalVolume > 0 ? ` • ${totalVolume.toFixed(0)}kg vol` : ''}</span>
+                                        </div>
+                                        <button class="delete-icon" onclick="event.stopPropagation(); deleteWorkoutSession('${group.date}', '${group.workoutName}', '${day}')" style="margin-left: 10px;">✕</button>
+                                    </div>
+                                    
+                                    <div id="group_${groupIdx}" style="display: none; margin-top: 6px; padding: 8px 0 0 30px;">
+                                        ${sortedSets.map(log => {
+                                            const logType = log.type || 'reps';
+                                            const valueLabel = logType === 'tid' ? 'TID' : 'REPS';
+                                            const unitLabel = logType === 'tid' ? 'ENHED' : 'KG';
+                                            
+                                            // Backward compatibility
+                                            const value = log.value || log.reps || '-';
+                                            const unit = log.unit || log.kg || '-';
+                                            
+                                            // Calculate volume only for reps type
+                                            const showVolume = logType === 'reps' && value !== '-' && unit !== '-';
+                                            const volume = showVolume ? (parseFloat(unit) * parseFloat(value)).toFixed(0) : null;
+                                            
+                                            return `
+                                            <div style="display: grid; grid-template-columns: 70px 70px 70px 70px 1fr; gap: 10px; align-items: center; padding: 12px; margin-bottom: 5px; background: rgba(0, 0, 0, 0.3); border-radius: 6px; font-size: 0.9rem;">
+                                                <div>
+                                                    <span style="color: var(--text-dim); font-size: 0.75rem;">SÆT</span><br>
+                                                    <strong style="color: var(--secondary); font-size: 1.2rem;">${log.set || '?'}</strong>
+                                                </div>
+                                                <div>
+                                                    <span style="color: var(--text-dim); font-size: 0.75rem;">${valueLabel}</span><br>
+                                                    <strong style="font-size: 1.1rem;">${value}</strong>
+                                                </div>
+                                                <div>
+                                                    <span style="color: var(--text-dim); font-size: 0.75rem;">${unitLabel}</span><br>
+                                                    <strong style="color: var(--success); font-size: 1.1rem;">${unit}</strong>
+                                                </div>
+                                                ${showVolume ? `
+                                                    <div>
+                                                        <span style="color: var(--text-dim); font-size: 0.75rem;">VOL</span><br>
+                                                        <strong style="color: var(--primary); font-size: 1.1rem;">${volume}</strong>
+                                                    </div>
+                                                ` : '<div></div>'}
+                                                ${log.notes ? `
+                                                    <div style="grid-column: span 5; margin-top: 5px;">
+                                                        <span style="color: var(--text-dim); font-size: 0.75rem;">NOTE</span><br>
+                                                        <em style="color: var(--text-dim); font-size: 0.9rem;">${log.notes}</em>
+                                                    </div>
+                                                ` : ''}
+                                            </div>
+                                        `}).join('')}
+                                    </div>
+                                </div>
+                            `}).join('')}
+                        </div>
+                        
+                        <div style="text-align: center; padding-top: 15px; border-top: 2px solid var(--border);">
+                            <p style="color: var(--text-dim); font-size: 0.9rem;">
+                                ${sortedGroups.length} ${sortedGroups.length === 1 ? 'session' : 'sessions'} logget
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
+        }
+        
+        function toggleHistoryGroup(groupId) {
+            const content = document.getElementById(groupId);
+            const arrow = document.getElementById('arrow_' + groupId);
+            
+            if (content && arrow) {
+                if (content.style.display === 'none') {
+                    content.style.display = 'block';
+                    arrow.style.transform = 'rotate(180deg)';
+                } else {
+                    content.style.display = 'none';
+                    arrow.style.transform = 'rotate(0deg)';
+                }
+            }
+        }
+        
+        function deleteWorkoutSession(date, workoutName, day) {
+            if (confirm(`Slet alle sæt fra ${date}?`)) {
+                // Remove all logs for this date, workout, and day
+                state.workoutLog = state.workoutLog.filter(log => 
+                    !(log.date === date && log.name === workoutName && log.day === day)
+                );
+                save();
+                // Close and reopen modal
+                const modal = document.querySelector('[style*="position: fixed"]');
+                if (modal) modal.remove();
+                render();
+            }
+        }
+        
+        function deleteWorkoutLog(index) {
+            if (confirm('Slet denne log?')) {
+                state.workoutLog.splice(index, 1);
+                
+                save();
+                syncToCloud(); // Force immediate sync to Google Sheets
+                
+                // Close and reopen modal to refresh
+                const modal = document.querySelector('[style*="position: fixed"]');
+                if (modal) modal.remove();
+                render();
+            }
         }
 
         function toggleShopping(item) {
@@ -2345,7 +3344,7 @@
             const protein = document.getElementById('mealProtein').value;
             const carbs = document.getElementById('mealCarbs').value;
             const fat = document.getElementById('mealFat').value;
-            const editingId = document.getElementById('editingMealId').value;
+            const editingIndex = document.getElementById('editingMealId').value;
             
             if (!name || !desc) {
                 alert('Udfyld navn og beskrivelse');
@@ -2371,70 +3370,36 @@
                 ingredients
             };
 
-            if (editingId) {
-                // Check if it's a custom meal (has numeric id)
-                const isCustom = !isNaN(editingId);
-                
-                if (isCustom) {
-                    // Editing existing custom meal
-                    const idx = state.customMeals[state.selectedDay]?.findIndex(m => m.id == editingId);
+            // Initialize library if it doesn't exist
+            if (!state.customMeals.library) state.customMeals.library = [];
+
+            if (editingIndex !== '') {
+                // Editing existing meal
+                const idx = parseInt(editingIndex);
+                if (idx >= 0 && idx < state.customMeals.library.length) {
+                    const oldMeal = state.customMeals.library[idx];
                     
-                    if (idx >= 0) {
-                        const oldMeal = state.customMeals[state.selectedDay][idx];
-                        
-                        // Update the meal
-                        state.customMeals[state.selectedDay][idx] = {
-                            id: oldMeal.id,
-                            ...mealData
-                        };
-                        
-                        // Clean up old ingredients
-                        if (oldMeal.ingredients) {
-                            removeIngredientsFromShopping(oldMeal.ingredients);
-                        }
-                    }
-                } else {
-                    // Editing a default meal - convert to custom
-                    if (!state.customMeals[state.selectedDay]) state.customMeals[state.selectedDay] = [];
+                    // Update the meal but keep the same ID
+                    state.customMeals.library[idx] = {
+                        id: oldMeal.id,
+                        ...mealData
+                    };
                     
-                    // Check if we already converted this one
-                    const existingIdx = state.customMeals[state.selectedDay].findIndex(m => m.originalName === editingId);
-                    
-                    if (existingIdx >= 0) {
-                        // Update existing converted meal
-                        const oldMeal = state.customMeals[state.selectedDay][existingIdx];
-                        
-                        state.customMeals[state.selectedDay][existingIdx] = {
-                            id: oldMeal.id,
-                            originalName: editingId,
-                            ...mealData
-                        };
-                        
-                        if (oldMeal.ingredients) {
-                            removeIngredientsFromShopping(oldMeal.ingredients);
-                        }
-                    } else {
-                        // Create new converted meal
-                        state.customMeals[state.selectedDay].push({ 
-                            id: Date.now(), 
-                            originalName: editingId,
-                            ...mealData 
-                        });
+                    // Clean up old ingredients from shopping list
+                    if (oldMeal.ingredients) {
+                        removeIngredientsFromShopping(oldMeal.ingredients);
                     }
                 }
             } else {
-                // Adding new
-                if (!state.customMeals[state.selectedDay]) state.customMeals[state.selectedDay] = [];
-                state.customMeals[state.selectedDay].push({ id: Date.now(), ...mealData });
+                // Adding new meal
+                state.customMeals.library.push({ 
+                    id: Date.now(), 
+                    ...mealData 
+                });
             }
 
-            // Add new ingredients to shopping (after updating meals)
-            // Now we only store checked state, quantities are calculated dynamically
-            ingredients.forEach(ing => {
-                if (ing.item && !state.shopping[ing.item]) {
-                    state.shopping[ing.item] = {checked: false};
-                }
-            });
+            // Shopping list is now manual - no automatic sync
+            // updateShoppingFromKostplan();
 
             // Reset form
             document.getElementById('mealName').value = '';
@@ -2446,7 +3411,9 @@
             document.getElementById('editingMealId').value = '';
             document.getElementById('mealFormTitle').textContent = '+ Tilføj Måltid';
             document.getElementById('mealSaveBtn').textContent = '+ Tilføj Måltid';
+            
             state.currentIngredients = [{item: '', quantity: '', unit: ''}];
+            renderIngredientRows();
 
             save();
             render();
@@ -2479,43 +3446,42 @@
             });
         }
 
-        function confirmDeleteMeal(id, isCustom) {
+        function confirmDeleteMeal(index) {
             if (confirm('Er du sikker på at du vil slette dette måltid?')) {
-                if (isCustom) {
-                    const meal = state.customMeals[state.selectedDay]?.find(m => m.id == id);
+                const mealLibrary = state.customMeals.library || [];
+                
+                if (index >= 0 && index < mealLibrary.length) {
+                    const meal = mealLibrary[index];
+                    const mealId = meal.id;
                     
-                    // First remove the meal from the array
-                    state.customMeals[state.selectedDay] = state.customMeals[state.selectedDay].filter(m => m.id != id);
+                    // Remove meal from library
+                    state.customMeals.library.splice(index, 1);
                     
-                    // Then remove ingredients (this now checks remaining meals)
-                    if (meal && meal.ingredients) {
-                        removeIngredientsFromShopping(meal.ingredients);
-                    }
+                    // Remove meal from all days in meal plan
+                    DAYS.forEach(day => {
+                        if (state.mealPlan[day]) {
+                            state.mealPlan[day] = state.mealPlan[day].filter(id => id !== mealId);
+                        }
+                    });
+                    
+                    // Shopping list is now manual - no automatic sync
+                    // updateShoppingFromKostplan();
                 }
+                
                 save();
                 render();
             }
         }
 
-        function loadMealToEdit(nameOrId, isCustom) {
-            const allMeals = [...(MEALS[state.selectedDay] || []), ...(state.customMeals[state.selectedDay] || [])];
+        function loadMealToEdit(index) {
+            const mealLibrary = state.customMeals.library || [];
             
-            // Find the actual current meal (not the original)
-            let meal;
-            if (isCustom || !isNaN(nameOrId)) {
-                // It's a custom meal - find by ID
-                meal = state.customMeals[state.selectedDay]?.find(m => m.id == nameOrId);
-            } else {
-                // It's a default meal - check if it was converted
-                const converted = state.customMeals[state.selectedDay]?.find(m => m.originalName === nameOrId);
-                if (converted) {
-                    meal = converted;
-                    nameOrId = converted.id; // Use the converted ID for editing
-                } else {
-                    meal = allMeals.find(m => m.name === nameOrId);
-                }
+            if (index < 0 || index >= mealLibrary.length) {
+                console.error('Invalid meal index:', index);
+                return;
             }
             
+            const meal = mealLibrary[index];
             if (!meal) return;
 
             document.getElementById('mealName').value = meal.name;
@@ -2524,16 +3490,18 @@
             document.getElementById('mealProtein').value = meal.protein || '';
             document.getElementById('mealCarbs').value = meal.carbs || '';
             document.getElementById('mealFat').value = meal.fat || '';
-            document.getElementById('editingMealId').value = meal.id || meal.name;
+            document.getElementById('editingMealId').value = index;
             document.getElementById('mealFormTitle').textContent = '✏️ Ret Måltid';
             document.getElementById('mealSaveBtn').textContent = '✓ Gem Ændringer';
             
-            // Load ingredients
-            if (meal.ingredients && meal.ingredients.length > 0) {
-                state.currentIngredients = meal.ingredients.map(ing => ({...ing}));
-            } else {
-                state.currentIngredients = [{item: '', quantity: '', unit: ''}];
-            }
+        // Load ingredients
+        if (meal.ingredients && meal.ingredients.length > 0) {
+            state.currentIngredients = meal.ingredients.map(ing => ({...ing}));
+            // Add empty row at the end for adding more ingredients
+            state.currentIngredients.push({item: '', quantity: '', unit: ''});
+        } else {
+            state.currentIngredients = [{item: '', quantity: '', unit: ''}];
+        }
             
             renderIngredientRows();
             document.querySelector('.add-form').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -2587,24 +3555,28 @@
         }
 
         function deleteWeightEntryByIndex(index) {
+            // Gem scroll position FØR confirm dialog
+            const scrollContainer = document.getElementById('graphScrollContainer');
+            const savedScrollPosition = scrollContainer ? scrollContainer.scrollLeft : 0;
+            
             if (confirm('Er du sikker på at du vil slette denne vægtmåling?')) {
                 console.log('=== DELETE BY INDEX DEBUG ===');
                 console.log('Deleting index:', index);
                 console.log('Before delete:', state.weightHistory.length, 'entries');
                 console.log('Entry to delete:', state.weightHistory[index]);
+                console.log('Saved scroll position:', savedScrollPosition);
                 
                 // Remove by index
                 state.weightHistory.splice(index, 1);
                 
                 console.log('After delete:', state.weightHistory.length, 'entries');
                 
-                // Force save to localStorage immediately
-                localStorage.setItem('fitnessData', JSON.stringify(state));
-                console.log('Saved to localStorage');
+                // Save to localStorage and sync
+                save();
                 
                 // Check if there's still data
                 if (state.weightHistory.length === 0) {
-                    const modal = document.querySelector('[style*="position: fixed"]');
+                    const modal = document.querySelector('[style*="position: fixed"][style*="z-index: 9999"]');
                     if (modal) modal.remove();
                     alert('Alle vægtmålinger slettet');
                     render();
@@ -2612,56 +3584,37 @@
                 }
                 
                 // Close and reopen modal with fresh data
-                const modal = document.querySelector('[style*="position: fixed"]');
+                const modal = document.querySelector('[style*="position: fixed"][style*="z-index: 9999"]');
                 if (modal) modal.remove();
                 
+                // Reopen graph and restore scroll position
                 setTimeout(() => {
                     showWeightGraph();
-                }, 100);
+                    
+                    // Restore scroll position efter graph er rendered
+                    setTimeout(() => {
+                        const newScrollContainer = document.getElementById('graphScrollContainer');
+                        if (newScrollContainer) {
+                            newScrollContainer.scrollLeft = savedScrollPosition;
+                            console.log('Restored scroll position to:', savedScrollPosition);
+                        }
+                    }, 50);
+                }, 50);
             }
-        }
-
-        function loadWorkoutToEdit(nameOrId, isCustom) {
-            const allWorkouts = [...(WORKOUTS[state.selectedDay] || []), ...(state.customWorkouts[state.selectedDay] || [])];
-            
-            // Find the actual current workout (not the original)
-            let workout;
-            if (isCustom || !isNaN(nameOrId)) {
-                // It's a custom workout - find by ID
-                workout = state.customWorkouts[state.selectedDay]?.find(w => w.id == nameOrId);
-            } else {
-                // It's a default workout - check if it was converted
-                const converted = state.customWorkouts[state.selectedDay]?.find(w => w.originalName === nameOrId);
-                if (converted) {
-                    workout = converted;
-                    nameOrId = converted.id; // Use the converted ID for editing
-                } else {
-                    workout = allWorkouts.find(w => w.name === nameOrId);
-                }
-            }
-            
-            if (!workout) return;
-
-            document.getElementById('exName').value = workout.name;
-            document.getElementById('exSets').value = workout.sets;
-            document.getElementById('exReps').value = workout.reps;
-            document.getElementById('exNotes').value = workout.notes || '';
-            document.getElementById('editingWorkoutId').value = workout.id || workout.name;
-            document.getElementById('workoutFormTitle').textContent = '✏️ Ret Øvelse';
-            document.getElementById('workoutSaveBtn').textContent = '✓ Gem Ændringer';
-            
-            document.querySelector('.add-form').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            // Hvis annuller: gør ingenting, modalen forbliver åben
         }
 
         function saveWorkout() {
             const name = document.getElementById('exName').value;
             const sets = document.getElementById('exSets').value;
-            const reps = document.getElementById('exReps').value;
+            const type = document.getElementById('exType').value;
+            const value = document.getElementById('exValue').value;
+            const unit = document.getElementById('exUnit').value;
             const notes = document.getElementById('exNotes').value;
             const editingId = document.getElementById('editingWorkoutId').value;
 
-            if (!name || !sets || !reps) {
-                alert('Udfyld øvelse, sæt og reps');
+            if (!name || !sets || !value) {
+                alert('Udfyld øvelse, sæt og antal/tid');
                 return;
             }
 
@@ -2678,7 +3631,9 @@
                             id: state.customWorkouts[state.selectedDay][idx].id,
                             name,
                             sets,
-                            reps,
+                            value,
+                            type,
+                            unit: unit || '',
                             notes
                         };
                     }
@@ -2696,7 +3651,9 @@
                             originalName: editingId,
                             name,
                             sets,
-                            reps,
+                            value,
+                            type,
+                            unit: unit || '',
                             notes
                         };
                     } else {
@@ -2706,7 +3663,9 @@
                             originalName: editingId,
                             name, 
                             sets, 
-                            reps, 
+                            value,
+                            type,
+                            unit: unit || '',
                             notes 
                         });
                     }
@@ -2714,20 +3673,111 @@
             } else {
                 // Adding new workout
                 if (!state.customWorkouts[state.selectedDay]) state.customWorkouts[state.selectedDay] = [];
-                state.customWorkouts[state.selectedDay].push({ id: Date.now(), name, sets, reps, notes });
+                state.customWorkouts[state.selectedDay].push({ 
+                    id: Date.now(), 
+                    name, 
+                    sets, 
+                    value, 
+                    type,
+                    unit: unit || '', 
+                    notes 
+                });
             }
 
             // Reset form
             document.getElementById('exName').value = '';
             document.getElementById('exSets').value = '';
-            document.getElementById('exReps').value = '';
+            document.getElementById('exType').value = 'reps';
+            document.getElementById('exValue').value = '';
+            document.getElementById('exUnit').value = '';
             document.getElementById('exNotes').value = '';
             document.getElementById('editingWorkoutId').value = '';
             document.getElementById('workoutFormTitle').textContent = '+ Tilføj Øvelse';
             document.getElementById('workoutSaveBtn').textContent = '+ Tilføj Øvelse';
+            updateWorkoutTypeFields(); // Reset field labels
 
             save();
             render();
+        }
+
+        function updateWorkoutTypeFields() {
+            const type = document.getElementById('exType').value;
+            const valueLabel = document.getElementById('valueLabel');
+            const unitLabel = document.getElementById('unitLabel');
+            const valueInput = document.getElementById('exValue');
+            const unitField = document.getElementById('unitField');
+            
+            if (type === 'reps') {
+                valueLabel.textContent = 'Reps';
+                unitLabel.textContent = 'Kg';
+                valueInput.placeholder = '';
+                
+                // Replace with input field for kg
+                unitField.innerHTML = `
+                    <label id="unitLabel">Kg</label>
+                    <input type="text" id="exUnit">
+                `;
+            } else if (type === 'tid') {
+                valueLabel.textContent = 'Tid';
+                unitLabel.textContent = 'Enhed';
+                valueInput.placeholder = '';
+                
+                // Replace with dropdown for time unit
+                unitField.innerHTML = `
+                    <label id="unitLabel">Enhed</label>
+                    <select id="exUnit">
+                        <option value="sek">Sekunder</option>
+                        <option value="min">Minutter</option>
+                        <option value="timer">Timer</option>
+                    </select>
+                `;
+            }
+        }
+
+        function loadWorkoutToEdit(editId, isCustom) {
+            console.log('🔧 loadWorkoutToEdit called:', {editId, isCustom, day: state.selectedDay});
+            
+            const allWorkouts = [...(WORKOUTS[state.selectedDay] || []), ...(state.customWorkouts[state.selectedDay] || [])];
+            console.log('📋 All workouts:', allWorkouts);
+            
+            let workout;
+            if (isCustom) {
+                // It's a custom workout - find by ID
+                workout = allWorkouts.find(w => w.id == editId);
+                console.log('🔍 Looking for custom workout with ID:', editId, 'Found:', workout);
+            } else {
+                // It's a default workout - find by name
+                workout = allWorkouts.find(w => w.name == editId);
+                console.log('🔍 Looking for default workout with name:', editId, 'Found:', workout);
+            }
+            
+            if (!workout) {
+                console.error('❌ Workout not found!');
+                alert('Kunne ikke finde øvelsen!');
+                return;
+            }
+            
+            document.getElementById('exName').value = workout.name;
+            document.getElementById('exSets').value = workout.sets;
+            document.getElementById('exType').value = workout.type || 'reps';
+            
+            // Update fields first (this recreates the unit input/select)
+            updateWorkoutTypeFields();
+            
+            // Backward compatibility: if workout has old 'reps' field, use it as 'value'
+            const value = workout.value || workout.reps || '';
+            const unit = workout.unit || workout.kg || '';
+            
+            // Then set the values
+            document.getElementById('exValue').value = value;
+            document.getElementById('exUnit').value = unit;
+            document.getElementById('exNotes').value = workout.notes || '';
+            document.getElementById('editingWorkoutId').value = editId;
+            document.getElementById('workoutFormTitle').textContent = '✏️ Ret Øvelse';
+            document.getElementById('workoutSaveBtn').textContent = '✓ Gem Ændringer';
+            
+            console.log('✅ Form loaded with values');
+            document.querySelector('.add-form').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
         function confirmDeleteWorkout(id, isCustom) {
@@ -2738,95 +3788,6 @@
                 save();
                 render();
             }
-        }
-
-        function showWeightGraph() {
-            const history = state.weightHistory.slice(-20); // Last 20 entries
-            if (history.length === 0) {
-                alert('Ingen vægtdata endnu');
-                return;
-            }
-
-            const maxWeight = Math.max(...history.map(h => h.weight), state.startWeight);
-            const minWeight = Math.min(...history.map(h => h.weight), state.goalWeight);
-            const range = maxWeight - minWeight;
-
-            const graphHTML = `
-                <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px" onclick="this.remove()">
-                    <div class="card" style="max-width: 800px; width: 100%; max-height: 90vh; overflow-y: auto" onclick="event.stopPropagation()">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px">
-                            <h2 style="margin: 0">Vægtprogression</h2>
-                            <button class="delete-btn" onclick="this.closest('[style*=fixed]').remove()">Luk</button>
-                        </div>
-                        
-                        <div style="background: var(--bg-dark); padding: 20px; border-radius: 12px; position: relative; height: 300px">
-                            <svg width="100%" height="100%" style="overflow: visible">
-                                ${history.map((h, i) => {
-                                    const x = (i / (history.length - 1)) * 100;
-                                    const y = 100 - ((h.weight - minWeight) / range) * 80;
-                                    return `<circle cx="${x}%" cy="${y}%" r="4" fill="var(--primary)"/>`;
-                                }).join('')}
-                                
-                                <polyline 
-                                    points="${history.map((h, i) => {
-                                        const x = (i / (history.length - 1)) * 100;
-                                        const y = 100 - ((h.weight - minWeight) / range) * 80;
-                                        return `${x},${y}`;
-                                    }).join(' ')}" 
-                                    fill="none" 
-                                    stroke="var(--primary)" 
-                                    stroke-width="2"
-                                    vector-effect="non-scaling-stroke"
-                                />
-                                
-                                ${state.goalWeight >= minWeight && state.goalWeight <= maxWeight ? `
-                                    <line 
-                                        x1="0%" 
-                                        y1="${100 - ((state.goalWeight - minWeight) / range) * 80}%" 
-                                        x2="100%" 
-                                        y2="${100 - ((state.goalWeight - minWeight) / range) * 80}%" 
-                                        stroke="var(--success)" 
-                                        stroke-width="2" 
-                                        stroke-dasharray="5,5"
-                                        vector-effect="non-scaling-stroke"
-                                    />
-                                ` : ''}
-                            </svg>
-                        </div>
-
-                        <div style="margin-top: 20px">
-                            <div class="stat-grid">
-                                <div class="stat-box">
-                                    <div class="value">${history[0].weight}</div>
-                                    <div class="label">START</div>
-                                </div>
-                                <div class="stat-box">
-                                    <div class="value">${history[history.length-1].weight}</div>
-                                    <div class="label">SENESTE</div>
-                                </div>
-                                <div class="stat-box">
-                                    <div class="value">${(history[0].weight - history[history.length-1].weight).toFixed(1)}</div>
-                                    <div class="label">ÆNDRING</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div style="margin-top: 20px">
-                            <h3 style="font-size: 1.2rem; margin-bottom: 10px">Historik</h3>
-                            <ul class="item-list">
-                                ${history.slice().reverse().map(h => `
-                                    <li class="item">
-                                        <span>${h.date}</span>
-                                        <strong style="color: var(--primary)">${h.weight} kg</strong>
-                                    </li>
-                                `).join('')}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            `;
-            
-            document.body.insertAdjacentHTML('beforeend', graphHTML);
         }
 
         function editMeal(nameOrId, isCustom) {
@@ -2931,6 +3892,28 @@
                 }
                 state.editMode.stats = !state.editMode.stats;
                 state.tempWeight = state.weight; // Reset temp weight to current
+            } else if (section === 'meals') {
+                // Reset meal form when exiting edit mode
+                if (state.editMode.meals) {
+                    document.getElementById('mealName').value = '';
+                    document.getElementById('mealDesc').value = '';
+                    document.getElementById('mealCal').value = '';
+                    document.getElementById('mealProtein').value = '';
+                    document.getElementById('mealCarbs').value = '';
+                    document.getElementById('mealFat').value = '';
+                    document.getElementById('editingMealId').value = '';
+                    document.getElementById('mealFormTitle').textContent = '+ Tilføj Måltid';
+                    document.getElementById('mealSaveBtn').textContent = '+ Tilføj Måltid';
+                    state.currentIngredients = [{item: '', quantity: '', unit: ''}];
+                }
+                state.editMode[section] = !state.editMode[section];
+            } else if (section === 'shopping') {
+                // Save when exiting shopping edit mode
+                if (state.editMode.shopping) {
+                    console.log('💾 Saving shopping data...');
+                    save();
+                }
+                state.editMode[section] = !state.editMode[section];
             } else {
                 state.editMode[section] = !state.editMode[section];
             }
@@ -2938,88 +3921,253 @@
         }
 
         function showWeightGraph() {
-            const history = state.weightHistory.slice(-20);
+            const history = state.weightHistory; // Show ALL data
             if (history.length === 0) {
                 alert('Ingen vægtdata endnu');
                 return;
             }
 
-            const maxWeight = Math.max(...history.map(h => h.weight), state.startWeight);
-            const minWeight = Math.min(...history.map(h => h.weight), state.goalWeight);
-            const range = maxWeight - minWeight || 1;
+            // Scale from goalWeight-5 to startWeight+5 for better zoom on relevant range
+            const maxWeight = state.startWeight + 5;
+            const minWeight = state.goalWeight - 5;
+            const range = maxWeight - minWeight;
+            
+            // Calculate width: 80px per point, show ~10 points at a time
+            const pointSpacing = 80;
+            const leftMargin = 10;
+            const rightMargin = 10;
+            // SVG width skal være minimum 800, ellers beregnes præcist
+            const calculatedWidth = leftMargin + ((history.length - 1) * pointSpacing) + rightMargin;
+            const svgWidth = Math.max(800, calculatedWidth);
+            
+            // Helper function to calculate Y position (inverted, with padding)
+            const getY = (weight) => {
+                return 10 + ((maxWeight - weight) / range) * 80; // 10% padding, proper inversion
+            };
+            
+            // Helper for X position - start ved leftMargin
+            const getX = (index) => {
+                return leftMargin + (index * pointSpacing);
+            };
+            
+            // Format date as DD-MMM-YYYY
+            const formatDate = (dateStr) => {
+                const date = new Date(dateStr);
+                const months = ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'];
+                return `${date.getDate()}-${months[date.getMonth()]}-${date.getFullYear()}`;
+            };
 
             const graphHTML = `
-                <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px" onclick="this.remove()">
-                    <div class="card" style="max-width: 900px; width: 100%; max-height: 90vh; overflow-y: auto" onclick="event.stopPropagation()">
+                <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15,15,15,0.95); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px" onclick="this.remove()">
+                    <div class="card" style="max-width: 1000px; width: 100%; max-height: 90vh; overflow-y: auto" onclick="event.stopPropagation()">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px">
                             <h2 style="margin: 0">Vægtprogression</h2>
                             <button class="delete-btn" onclick="this.closest('[style*=fixed]').remove()">Luk</button>
                         </div>
                         
-                        <div style="background: var(--bg-dark); padding: 30px 20px; border-radius: 12px; position: relative; height: 350px; border: 2px solid var(--border);">
-                            <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
-                                <defs>
-                                    <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                        <stop offset="0%" style="stop-color:var(--primary);stop-opacity:0.3" />
-                                        <stop offset="100%" style="stop-color:var(--primary);stop-opacity:0" />
-                                    </linearGradient>
-                                </defs>
-                                
-                                <!-- Grid lines -->
-                                ${[20, 40, 60, 80].map(y => `<line x1="0" y1="${y}" x2="100" y2="${y}" stroke="rgba(255,255,255,0.1)" stroke-width="0.2" vector-effect="non-scaling-stroke"/>`).join('')}
-                                
-                                <!-- Goal line -->
-                                ${state.goalWeight >= minWeight && state.goalWeight <= maxWeight ? `
-                                    <line 
-                                        x1="0" 
-                                        y1="${100 - ((state.goalWeight - minWeight) / range) * 80}" 
-                                        x2="100" 
-                                        y2="${100 - ((state.goalWeight - minWeight) / range) * 80}" 
-                                        stroke="var(--success)" 
-                                        stroke-width="0.5" 
-                                        stroke-dasharray="3,3"
-                                        vector-effect="non-scaling-stroke"
+                        <!-- Graph container with sticky Y-axis -->
+                        <div style="background: var(--bg-dark); border-radius: 12px; border: 2px solid var(--border); position: relative; display: flex;">
+                            <!-- Sticky Y-axis (left side) -->
+                            <div style="width: 80px; flex-shrink: 0; padding: 40px 0 140px 0; position: sticky; left: 0; background: var(--bg-dark); z-index: 10;">
+                                <svg width="80" height="400" viewBox="0 0 80 400" style="display: block;">
+                                    <!-- Y-axis labels aligned with graph -->
+                                    ${[maxWeight, state.startWeight, state.goalWeight, minWeight].map(weight => {
+                                        const yPercent = getY(weight);
+                                        const y = yPercent * 4; // Scale to viewBox
+                                        const isGoal = weight === state.goalWeight;
+                                        const isStart = weight === state.startWeight;
+                                        return `
+                                            <text 
+                                                x="65" y="${y}" 
+                                                fill="${isGoal ? 'var(--success)' : isStart ? 'var(--secondary)' : 'var(--text-dim)'}" 
+                                                font-size="16" 
+                                                text-anchor="end" 
+                                                dominant-baseline="middle"
+                                                style="font-family: 'DM Sans', sans-serif; font-weight: 600;"
+                                            >${weight}kg</text>
+                                        `;
+                                    }).join('')}
+                                </svg>
+                            </div>
+                            
+                            <!-- Scrollable graph area with custom scrollbar -->
+                            <div id="graphScrollContainer" style="flex: 1; overflow-x: auto; overflow-y: hidden; padding: 40px 20px 0px 0;">
+                                <style>
+                                    #graphScrollContainer::-webkit-scrollbar {
+                                        height: 8px;
+                                    }
+                                    #graphScrollContainer::-webkit-scrollbar-track {
+                                        background: rgba(255, 255, 255, 0.05);
+                                        border-radius: 10px;
+                                    }
+                                    #graphScrollContainer::-webkit-scrollbar-thumb {
+                                        background: rgba(200, 200, 200, 0.3);
+                                        border-radius: 10px;
+                                    }
+                                    #graphScrollContainer::-webkit-scrollbar-thumb:hover {
+                                        background: rgba(200, 200, 200, 0.5);
+                                    }
+                                </style>
+                                <svg width="${svgWidth}" height="500" viewBox="0 0 ${svgWidth} 500" style="display: block;">
+                                    <!-- Grid lines (horizontal) - ONLY for goalWeight and min/max -->
+                                    ${[maxWeight, state.goalWeight, minWeight].map(weight => {
+                                        const yPercent = getY(weight);
+                                        const y = yPercent * 4;
+                                        const isGoal = weight === state.goalWeight;
+                                        return `
+                                            <line 
+                                                x1="0" y1="${y}" 
+                                                x2="${svgWidth}" y2="${y}" 
+                                                stroke="${isGoal ? 'var(--success)' : 'rgba(255,255,255,0.1)'}" 
+                                                stroke-width="1" 
+                                                ${isGoal ? 'stroke-dasharray="8,8"' : ''}
+                                            />
+                                        `;
+                                    }).join('')}
+                                    
+                                    <!-- Main line -->
+                                    <polyline 
+                                        points="${history.map((h, i) => {
+                                            const x = getX(i);
+                                            const yPercent = getY(h.weight);
+                                            const y = yPercent * 4;
+                                            return `${x},${y}`;
+                                        }).join(' ')}" 
+                                        fill="none" 
+                                        stroke="var(--primary)" 
+                                        stroke-width="3"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
                                     />
-                                ` : ''}
-                                
-                                <!-- Area fill -->
-                                <polygon 
-                                    points="${history.map((h, i) => {
-                                        const x = (i / (history.length - 1)) * 100;
-                                        const y = 100 - ((h.weight - minWeight) / range) * 80;
-                                        return `${x},${y}`;
-                                    }).join(' ')} 100,100 0,100" 
-                                    fill="url(#areaGradient)"
-                                />
-                                
-                                <!-- Main line -->
-                                <polyline 
-                                    points="${history.map((h, i) => {
-                                        const x = (i / (history.length - 1)) * 100;
-                                        const y = 100 - ((h.weight - minWeight) / range) * 80;
-                                        return `${x},${y}`;
-                                    }).join(' ')}" 
-                                    fill="none" 
-                                    stroke="var(--primary)" 
-                                    stroke-width="0.8"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    vector-effect="non-scaling-stroke"
-                                />
-                                
-                                <!-- Data points -->
-                                ${history.map((h, i) => {
-                                    const x = (i / (history.length - 1)) * 100;
-                                    const y = 100 - ((h.weight - minWeight) / range) * 80;
-                                    return `<circle cx="${x}" cy="${y}" r="1" fill="var(--primary)" vector-effect="non-scaling-stroke"/>`;
-                                }).join('')}
-                            </svg>
+                                    
+                                    <!-- Data points with hover tooltips -->
+                                    ${history.map((h, i) => {
+                                        const x = getX(i);
+                                        const yPercent = getY(h.weight);
+                                        const y = yPercent * 4;
+                                        
+                                        // Smart tooltip positioning
+                                        const isFirst = i === 0;
+                                        const isLast = i === history.length - 1;
+                                        
+                                        let rectX, textX;
+                                        if (isFirst) {
+                                            // Første punkt: rect starter ved punktet
+                                            rectX = x;
+                                            textX = x + 70; // Center of rect: x + (140/2)
+                                        } else if (isLast) {
+                                            // Sidste punkt: rect ender ved punktet
+                                            rectX = x - 140;
+                                            textX = x - 70; // Center of rect: (x-140) + (140/2)
+                                        } else {
+                                            // Midter punkter: rect centreret
+                                            rectX = x - 70;
+                                            textX = x; // Center of rect
+                                        }
+                                        
+                                        return `
+                                            <g class="data-point-group">
+                                                <circle 
+                                                    cx="${x}" cy="${y}" 
+                                                    r="4" 
+                                                    fill="var(--primary)" 
+                                                    stroke="var(--bg-dark)"
+                                                    stroke-width="1.5"
+                                                    style="cursor: pointer; transition: all 0.2s;"
+                                                    onmouseover="this.setAttribute('r', '7'); this.nextElementSibling.style.display='block';"
+                                                    onmouseout="this.setAttribute('r', '4'); this.nextElementSibling.style.display='none';"
+                                                />
+                                                <g style="display: none; pointer-events: none;">
+                                                    <!-- Tooltip background -->
+                                                    <rect 
+                                                        x="${rectX}" 
+                                                        y="${y - 45}" 
+                                                        width="140" 
+                                                        height="35" 
+                                                        fill="rgba(20, 20, 20, 0.95)" 
+                                                        stroke="var(--primary)"
+                                                        stroke-width="1.5"
+                                                        rx="6"
+                                                    />
+                                                    <!-- Tooltip date (centreret i boksen) -->
+                                                    <text 
+                                                        x="${textX}" 
+                                                        y="${y - 30}" 
+                                                        fill="var(--text-dim)" 
+                                                        font-size="11" 
+                                                        text-anchor="middle"
+                                                        style="font-family: 'DM Sans', sans-serif;"
+                                                    >${formatDate(h.date)}</text>
+                                                    <!-- Tooltip weight (centreret i boksen) -->
+                                                    <text 
+                                                        x="${textX}" 
+                                                        y="${y - 15}" 
+                                                        fill="var(--primary)" 
+                                                        font-size="16" 
+                                                        font-weight="700"
+                                                        text-anchor="middle"
+                                                        style="font-family: 'DM Sans', sans-serif;"
+                                                    >${h.weight} kg</text>
+                                                </g>
+                                            </g>
+                                        `;
+                                    }).join('')}
+                                    
+                                    <!-- X-axis delete buttons ABOVE date labels -->
+                                    ${history.map((h, i) => {
+                                        const x = getX(i);
+                                        // Delete button at y=380
+                                        const deleteY = 380;
+                                        
+                                        // Calculate dateX based on pattern from first 3
+                                        // Pattern: dateX = x - 70 for proper alignment
+                                        const dateX = x - 70;
+                                        
+                                        return `
+                                            <g>
+                                                <!-- Delete button (first, at graph bottom) -->
+                                                <g style="cursor: pointer;" onclick="event.stopPropagation(); deleteWeightEntryByIndex(${i});">
+                                                    <circle 
+                                                        cx="${x}" cy="${deleteY}" 
+                                                        r="9" 
+                                                        fill="rgba(255, 57, 57, 0.2)" 
+                                                        stroke="var(--primary)"
+                                                        stroke-width="1.5"
+                                                        style="transition: all 0.2s;"
+                                                        onmouseover="this.setAttribute('fill', 'var(--primary)');"
+                                                        onmouseout="this.setAttribute('fill', 'rgba(255, 57, 57, 0.2)');"
+                                                    />
+                                                    <text 
+                                                        x="${x}" y="${deleteY}" 
+                                                        fill="white" 
+                                                        font-size="13" 
+                                                        font-weight="700"
+                                                        text-anchor="middle"
+                                                        dominant-baseline="middle"
+                                                        style="font-family: 'DM Sans', sans-serif; pointer-events: none;"
+                                                    >✕</text>
+                                                </g>
+                                                
+                                                <!-- Date label (below delete button, rotated -90°) -->
+                                                <text 
+                                                    x="${dateX}" y="424" 
+                                                    fill="var(--text-dim)" 
+                                                    font-size="14" 
+                                                    text-anchor="start"
+                                                    transform="rotate(-90 ${x} 420)"
+                                                    style="font-family: 'DM Sans', sans-serif;"
+                                                >${formatDate(h.date)}</text>
+                                            </g>
+                                        `;
+                                    }).join('')}
+                                </svg>
+                            </div>
                         </div>
 
                         <div style="margin-top: 20px">
                             <div class="stat-grid">
                                 <div class="stat-box">
-                                    <div class="value">${history[0].weight} <span style="font-size: 1.5rem">kg</span></div>
+                                    <div class="value">${state.startWeight.toFixed(1)} <span style="font-size: 1.5rem">kg</span></div>
                                     <div class="label">START</div>
                                 </div>
                                 <div class="stat-box">
@@ -3027,35 +4175,52 @@
                                     <div class="label">SENESTE</div>
                                 </div>
                                 <div class="stat-box">
-                                    <div class="value">${(history[0].weight - history[history.length-1].weight).toFixed(1)} <span style="font-size: 1.5rem">kg</span></div>
+                                    <div class="value">${(state.startWeight - history[history.length-1].weight).toFixed(1)} <span style="font-size: 1.5rem">kg</span></div>
                                     <div class="label">ÆNDRING</div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div style="margin-top: 20px">
-                            <h3 style="font-size: 1.2rem; margin-bottom: 10px">Historik</h3>
-                            <ul class="item-list">
-                                ${history.slice().reverse().map((h, idx) => `
-                                    <li class="item">
-                                        <div>
-                                            <span>${h.date}</span>
-                                            <strong style="color: var(--primary); margin-left: 10px">${h.weight} kg</strong>
-                                        </div>
-                                        <button class="delete-icon" onclick="deleteWeightEntryByIndex(${history.length - 1 - idx})">✕</button>
-                                    </li>
-                                `).join('')}
-                            </ul>
                         </div>
                     </div>
                 </div>
             `;
             
             document.body.insertAdjacentHTML('beforeend', graphHTML);
+            
+            // Auto-scroll to show newest data (rightmost)
+            setTimeout(() => {
+                const scrollContainer = document.getElementById('graphScrollContainer');
+                if (scrollContainer && history.length > 10) {
+                    scrollContainer.scrollLeft = scrollContainer.scrollWidth;
+                }
+            }, 50);
         }
 
-        // Initialize app when page loads
-        initApp();
+        // Load from cloud (which will call render when done)
+        // But render immediately with localStorage first for fast startup
+        
+        // Render immediately with localStorage data
+        console.log('🚀 Fast startup: Rendering from localStorage');
+        checkDailyReset();
+        render();
+        
+        // Then load from Google Sheets in background and update
+        loadFromCloud();
+        
+        // Fallback: If not in Apps Script, we're already rendered above
+        setTimeout(() => {
+            if (typeof google === 'undefined' || typeof google.script === 'undefined') {
+                console.log('📱 Not in Apps Script - using localStorage only');
+                
+                // Hide loading overlay since we won't load from Google Sheets
+                const overlay = document.getElementById('loadingOverlay');
+                if (overlay) {
+                    overlay.style.opacity = '0';
+                    overlay.style.transition = 'opacity 0.3s ease';
+                    setTimeout(() => overlay.remove(), 300);
+                }
+            }
+        }, 100);
     </script>
+
 </body>
 </html>

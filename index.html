@@ -1035,7 +1035,7 @@
             syncToCloud();
         }
 
-        async function syncToCloud() {
+        function syncToCloud() {
             console.log('☁️ Syncing to Google Sheets via API...');
             
             try {
@@ -1056,19 +1056,27 @@
                     }
                 };
                 
-                const response = await fetch(APPS_SCRIPT_URL, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        action: 'save',
-                        payload: payload
-                    })
-                });
+                // Use JSONP to avoid CORS issues
+                const callbackName = 'syncCallback_' + Date.now();
+                window[callbackName] = function(result) {
+                    console.log('✅ Synced to Google Sheets:', result);
+                    delete window[callbackName];
+                    document.body.removeChild(script);
+                };
                 
-                const result = await response.json();
-                console.log('✅ Synced to Google Sheets:', result);
+                const script = document.createElement('script');
+                const params = new URLSearchParams({
+                    action: 'save',
+                    data: JSON.stringify(payload),
+                    callback: callbackName
+                });
+                script.src = APPS_SCRIPT_URL + '?' + params.toString();
+                script.onerror = function() {
+                    console.error('❌ Sync failed: Could not reach server');
+                    delete window[callbackName];
+                    document.body.removeChild(script);
+                };
+                document.body.appendChild(script);
             } catch (error) {
                 console.error('❌ Sync failed:', error);
             }

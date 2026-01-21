@@ -652,7 +652,7 @@
             
             /* Ingredient rows stacked på mobil */
             .ingredient-row {
-                grid-template-columns: 1fr !important;
+                grid-template-columns: 2fr 1fr 1fr auto !important;
                 gap: 8px !important;
             }
             
@@ -666,7 +666,7 @@
         }
         
         /* Landscape mobil optimization */
-        /* PORTRAIT MODE - Optimeret til telefon i lodret position */
+        /* PORTRAIT MODE - Meget kompakt til mobil */
         @media screen and (max-width: 768px) and (orientation: portrait) {
             /* Prevent overflow */
             html, body {
@@ -676,41 +676,42 @@
             
             .container {
                 max-width: 100vw !important;
-                padding: 12px !important;
+                padding: 8px !important;
                 margin: 0 !important;
             }
             
-            /* Sticky header - mindre */
+            /* Meget kompakt sticky header */
             .header {
                 position: sticky;
                 top: 0;
                 z-index: 100;
                 background: var(--bg);
-                padding: 15px 12px !important;
-                margin: -12px -12px 15px -12px !important;
+                padding: 10px 8px !important;
+                margin: -8px -8px 10px -8px !important;
                 border-bottom: 2px solid var(--primary);
             }
             
             .header h1 {
-                font-size: 2rem !important;
-                letter-spacing: 2px !important;
+                font-size: 1.5rem !important;
+                letter-spacing: 1px !important;
                 margin: 0 !important;
             }
             
-            /* Sticky navigation tabs */
+            /* Kompakte navigation tabs */
             .nav-tabs {
                 position: sticky;
-                top: 70px;
+                top: 50px;
                 z-index: 99;
                 background: var(--bg);
-                padding: 8px 0 !important;
-                margin: 0 -12px 15px -12px !important;
-                gap: 6px !important;
+                padding: 6px 8px !important;
+                margin: 0 -8px 10px -8px !important;
+                gap: 3px !important;
                 overflow-x: auto !important;
-                flex-wrap: nowrap !important;
+                flex-wrap: wrap !important;
                 -webkit-overflow-scrolling: touch !important;
                 scrollbar-width: none !important;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+                box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+				justify-content: center !important;
             }
             
             .nav-tabs::-webkit-scrollbar {
@@ -718,56 +719,137 @@
             }
             
             .nav-tab {
-                padding: 10px 16px !important;
-                font-size: 0.85rem !important;
+                padding: 8px 8px !important;
+                font-size: 0.65rem !important;
                 white-space: nowrap !important;
                 flex-shrink: 0 !important;
             }
             
-            /* Cards - kompakte */
+            /* Meget kompakte cards */
             .card {
-                padding: 15px !important;
-                margin-bottom: 15px !important;
-                border-radius: 12px !important;
+                padding: 10px !important;
+                margin-bottom: 10px !important;
+                border-radius: 10px !important;
             }
             
             .card h2 {
-                font-size: 1.3rem !important;
-                margin-bottom: 12px !important;
+                font-size: 1.1rem !important;
+                margin-bottom: 8px !important;
             }
             
             .card h3 {
-                font-size: 1.1rem !important;
-                margin-bottom: 10px !important;
+                font-size: 0.95rem !important;
+                margin-bottom: 6px !important;
             }
             
-            /* Stats boxes - 3 i række */
-            .stats {
-                display: grid !important;
-                grid-template-columns: repeat(3, 1fr) !important;
-                gap: 10px !important;
-                margin-bottom: 15px !important;
+            /* Override makro span i h2 og h3 titler */
+            .card h2 span[style*="font-size: 1.5rem"],
+            .card h3 span[style*="font-size: 1.2rem"] {
+                font-size: 0.7rem !important;
             }
             
-            .stat-box {
-                padding: 15px 10px !important;
-                text-align: center !important;
+            /* Workout logging set boxes - kompakt mobile */
+            /* Target set boxes i oversigt */
+            .overview-section div[style*="grid-template-columns: 60px"] {
+                grid-template-columns: 40px 1fr 1fr 1.2fr !important;
+                gap: 3px !important;
+                padding: 4px !important;
+                margin-bottom: 3px !important;
             }
             
-            .stat-box h3 {
-                font-size: 1.8rem !important;
-                margin: 0 0 3px 0 !important;
+            /* Sæt 1, Sæt 2 titler */
+            .overview-section div[style*="grid-template-columns: 60px"] strong[style*="font-size: 1.1rem"] {
+                font-size: 0.7rem !important;
+                white-space: nowrap !important;
             }
             
-            .stat-box span {
+            /* Labels (Reps, Kg, Note) */
+            .overview-section div[style*="grid-template-columns: 60px"] label[style*="font-size: 0.75rem"] {
+                font-size: 0.55rem !important;
+                margin-bottom: 1px !important;
+            }
+            
+            /* Input felter */
+            .overview-section div[style*="grid-template-columns: 60px"] input[style*="padding: 8px"] {
+                padding: 2px !important;
+                font-size: 0.65rem !important;
+                min-height: 26px !important;
+            }
+            
+            /* Select (Sekunder dropdown) */
+            .overview-section div[style*="grid-template-columns: 60px"] select {
+                padding: 2px !important;
+                font-size: 0.65rem !important;
+                min-height: 26px !important;
+            }
+            
+            /* Log Træning knap */
+            .overview-section button[style*="padding: 12px"] {
+                padding: 6px !important;
+                margin-top: 4px !important;
                 font-size: 0.75rem !important;
             }
             
-            /* Dag selector - scrollable */
+            /* Stats boxes - 3 i række, kompakte */
+            .stat-grid {
+                display: grid !important;
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 6px !important;
+                margin-bottom: 10px !important;
+            }
+            
+            .stat-grid .stat-box {
+                padding: 6px 4px !important;
+                text-align: center !important;
+                border-radius: 8px !important;
+            }
+            
+            .stat-box {
+                padding: 6px 4px !important;
+                text-align: center !important;
+                border-radius: 8px !important;
+            }
+            
+			.stat-box h3 {
+				font-size: 1.4rem !important;
+				margin: 0 !important;
+				line-height: 0.9 !important;
+			}
+
+			.stat-box span {
+				font-size: 0.55rem !important;
+				display: block !important;
+				margin-top: 2px !important;
+			}
+			
+			/* Override .value og .label classes */
+			.stat-box .value {
+				font-size: 1.2rem !important;
+				line-height: 0.9 !important;
+				margin: 0 !important;
+				padding: 0 !important;
+				display: block !important;
+			}
+			
+			.stat-box .label {
+				font-size: 0.5rem !important;
+				margin-top: 1px !important;
+				letter-spacing: 0.3px !important;
+				text-transform: uppercase !important;
+				display: block !important;
+			}
+			
+			/* Override inline styles på span i .value */
+			.stat-box .value span {
+				font-size: 0.75rem !important;
+				display: inline !important;
+			}
+            
+            /* Kompakt dag selector */
             .day-selector {
                 display: flex !important;
-                gap: 6px !important;
-                margin-bottom: 15px !important;
+                gap: 2px !important;
+                margin-bottom: 10px !important;
                 overflow-x: auto !important;
                 -webkit-overflow-scrolling: touch !important;
                 scrollbar-width: none !important;
@@ -778,139 +860,310 @@
             }
             
             .day-btn {
-                padding: 10px 14px !important;
-                font-size: 0.8rem !important;
+                padding: 6px 7px !important;
+                font-size: 0.65rem !important;
                 flex-shrink: 0 !important;
             }
             
-            /* Knapper - gode touch targets */
+            /* Mindre knapper */
             .btn-add {
-                padding: 12px 20px !important;
-                font-size: 0.9rem !important;
-                width: 100% !important;
-                margin-top: 12px !important;
-            }
-            
-            .edit-toggle {
-                padding: 8px 16px !important;
+                padding: 10px 16px !important;
                 font-size: 0.85rem !important;
-                top: 12px !important;
-                right: 12px !important;
+                width: 100% !important;
+                margin-top: 10px !important;
             }
             
-            .edit-btn, .delete-btn {
-                padding: 8px 12px !important;
-                font-size: 0.8rem !important;
-                min-height: 40px !important;
-            }
+			.edit-toggle {
+				padding: 4px 10px !important;
+				font-size: 0.65rem !important;
+				margin-bottom: 20px !important;
+				top: 5px !important;
+				right: 8px !important;
+			}
+
+			.edit-btn, .delete-btn {
+				padding: 4px 8px !important;
+				font-size: 0.65rem !important;
+				min-height: 28px !important;
+			}
             
             .delete-icon {
-                width: 40px !important;
-                height: 40px !important;
-                font-size: 1.1rem !important;
+                width: 32px !important;
+                height: 32px !important;
+                font-size: 0.9rem !important;
             }
             
-            /* Forms - 2 kolonner hvor det giver mening */
-            .form-grid {
-                grid-template-columns: 1fr 1fr !important;
-                gap: 10px !important;
+			/* Måltids-form layout */
+			/* Lav parent til grid container og børn til grid items */
+			/* Specifik for måltider - identificer via den unikke struktur */
+			#mealName {
+				/* Marker at dette er måltids form */
+			}
+			
+			/* Find måltids add-form via mealName input */
+			#mealName:not(.hidden) ~ *,
+			.add-form:has(#mealName) > div.form-grid:first-of-type,
+			.add-form:has(#mealName) > div.form-grid:nth-of-type(2) {
+				display: contents !important;
+			}
+			
+			/* Wrapper bliver grid container - men kun for måltids form */
+			.add-form:has(#mealName):not(.hidden) {
+				display: grid !important;
+				grid-template-columns: repeat(4, 1fr) !important;
+				gap: 2px !important;
+			}
+			
+			/* Første 2 felter (navn + beskrivelse) fuld bredde */
+			.add-form:has(#mealName) > div.form-grid:first-of-type > .form-group {
+				grid-column: 1 / -1 !important;
+			}
+			
+			/* Tilføj måltid knap fuld bredde */
+			.add-form:has(#mealName) > .btn-add {
+				grid-column: 1 / -1 !important;
+			}
+			
+			/* Tilføj mellemrum før ingredienser */
+			.add-form:has(#mealName) > .form-group {
+				grid-column: 1 / -1 !important;
+				margin-top: 6px !important;
+			}
+			
+			/* Næste 4 felter (makroer) får automatisk 1 kolonne hver */
+            /* Reducer form-group margin */
+            .form-group {
+                margin-bottom: 2px !important;
             }
             
-            /* Første 2 felter (navn + beskrivelse) fuld bredde */
-            .form-grid .form-group:nth-child(1),
-            .form-grid .form-group:nth-child(2) {
-                grid-column: 1 / -1 !important;
-            }
+			/* Workout form specifik layout (træning side) */
+			#content > .card > .add-form > div[style*="grid-template-columns: 1.5fr"] {
+				display: grid !important;
+				grid-template-columns: repeat(4, 1fr) !important;
+				gap: 2px !important;
+			}
+
+			/* Første række: Øvelse (2 kolonner) kommer først */
+			#content > .card > .add-form > div[style*="grid-template-columns: 1.5fr"] > .form-group:nth-child(1) {
+				grid-column: span 2 !important;
+				order: 1 !important;
+			}
+
+			/* Noter (2 kolonner) kommer efter Øvelse på første række */
+			#content > .card > .add-form > div[style*="grid-template-columns: 1.5fr"] > .form-group:nth-child(6) {
+				grid-column: span 2 !important;
+				order: 2 !important;
+			}
+
+			/* Anden række: Sæt | Type | Tid/Reps | Kg/Enhed */
+			#content > .card > .add-form > div[style*="grid-template-columns: 1.5fr"] > .form-group:nth-child(2) {
+				order: 3 !important;
+			}
+
+			#content > .card > .add-form > div[style*="grid-template-columns: 1.5fr"] > .form-group:nth-child(3) {
+				order: 4 !important;
+			}
+
+			#content > .card > .add-form > div[style*="grid-template-columns: 1.5fr"] > .form-group:nth-child(4) {
+				order: 5 !important;
+			}
+
+			#content > .card > .add-form > div[style*="grid-template-columns: 1.5fr"] > .form-group:nth-child(5) {
+				order: 6 !important;
+			}
+            
             
             .form-group {
-                margin-bottom: 10px !important;
+                margin-bottom: 2px !important;
             }
             
             .add-form {
-                margin-bottom: 20px !important;
+                margin-bottom: 15px !important;
             }
             
             .add-form h3 {
-                font-size: 1.1rem !important;
-                margin-bottom: 12px !important;
+                font-size: 0.95rem !important;
+                margin-bottom: 10px !important;
             }
             
             label {
-                font-size: 0.8rem !important;
-                margin-bottom: 4px !important;
+                font-size: 0.7rem !important;
+                margin-bottom: 1px !important;
                 display: block !important;
                 font-weight: 600 !important;
             }
             
             input, select, textarea {
-                padding: 10px !important;
-                font-size: 0.9rem !important;
-                min-height: 44px !important;
+                padding: 4px !important;
+                font-size: 0.65rem !important;
+                min-height: 30px !important;
                 width: 100% !important;
             }
             
             textarea {
-                min-height: 80px !important;
+                min-height: 60px !important;
             }
             
-            /* Ingrediens rows */
+            /* Ingrediens rows kompakte */
             #ingredientRows > div {
-                margin-bottom: 8px !important;
+                margin-bottom: 3px !important;
+            }
+            
+            /* VIGTIGT: Override inline styles for ingredient-row i portrait mode */
+            #ingredientRows .ingredient-row {
+                display: grid !important;
+                grid-template-columns: 2fr 1fr 1fr 40px !important;
+                gap: 3px !important;
             }
             
             #ingredientRows input {
-                padding: 8px !important;
-                font-size: 0.85rem !important;
-                min-height: 40px !important;
+                padding: 4px !important;
+                font-size: 0.75rem !important;
+                min-height: 30px !important;
             }
             
-            /* Item lists */
+            /* Delete icon i ingredienser */
+            #ingredientRows .delete-icon {
+                width: 28px !important;
+                height: 28px !important;
+                font-size: 0.85rem !important;
+            }
+            
+            /* Kompakte item lists */
             .item-list {
                 margin: 0 !important;
             }
             
             .item-list li {
-                padding: 12px !important;
-                margin-bottom: 8px !important;
-                font-size: 0.9rem !important;
+                padding: 6px !important;
+                margin-bottom: 4px !important;
+                font-size: 0.7rem !important;
             }
             
             .item strong {
-                font-size: 1rem !important;
+                font-size: 0.8rem !important;
                 display: block !important;
-                margin-bottom: 3px !important;
+                margin-bottom: 0px !important;
             }
             
-            /* Progress bars */
+            /* Mindre span tekst i items (som "Mål: 3 sæt × 10") */
+            .item span {
+                font-size: 0.65rem !important;
+            }
+            
+            /* Specifik override for workout li items (inline styles) */
+            ul li[style*="padding: 15px"] {
+                padding: 6px !important;
+                margin-bottom: 4px !important;
+            }
+            
+            ul li[style*="padding: 15px"] strong[style*="font-size: 1.1rem"] {
+                font-size: 0.8rem !important;
+            }
+            
+            ul li[style*="padding: 15px"] span[style*="font-size: 0.9rem"] {
+                font-size: 0.65rem !important;
+            }
+            
+            ul li[style*="padding: 15px"] span[style*="font-size: 0.85rem"] {
+                font-size: 0.6rem !important;
+            }
+            
+            /* Override for oversigt workout divs (ikke li) */
+            .overview-section div[style*="padding: 15px"] {
+                padding: 6px !important;
+                margin-bottom: 4px !important;
+            }
+            
+            .overview-section div[style*="padding: 15px"] strong[style*="font-size: 1.1rem"] {
+                font-size: 0.8rem !important;
+            }
+            
+            .overview-section div[style*="padding: 15px"] span[style*="font-size: 0.9rem"] {
+                font-size: 0.65rem !important;
+            }
+            
+            .overview-section div[style*="padding: 15px"] span[style*="font-size: 0.85rem"] {
+                font-size: 0.6rem !important;
+            }
+            
+            .overview-section div[style*="margin-bottom: 15px"] {
+                margin-bottom: 4px !important;
+            }
+            
+            /* Mini-card (oversigt boxes) */
+            .mini-card {
+                padding: 6px !important;
+                font-size: 0.7rem !important;
+            }
+            
+            .mini-card strong {
+                font-size: 0.85rem !important;
+                margin-bottom: 0px !important;
+                line-height: 1.2 !important;
+            }
+            
+            .mini-card span {
+                font-size: 0.65rem !important;
+                line-height: 1.2 !important;
+            }
+            
+            /* Specifik for item-list (måltider, kostplan, dagligvarer) - fjern br mellemrum */
+            .item-list li strong {
+                display: block !important;
+                font-size: 0.85rem !important;
+                margin-bottom: 0px !important;
+                line-height: 1.2 !important;
+            }
+            
+            .item-list li br:first-of-type {
+                display: none !important;
+            }
+            
+            /* Mindre progress bars */
             .progress-bar {
-                height: 16px !important;
+                height: 6px !important;
+                margin: 0 0 10px 0 !important;
             }
             
-            /* Shopping items */
+            /* Reducer tekst og margin over progress bars */
+            /* Første progress bar (Kostplan) */
+            .card p[style*="margin-bottom: 10px"] {
+                margin: 4px 0 1px 0 !important;
+                font-size: 0.75rem !important;
+            }
+            
+            /* Anden progress bar (Træning) - mere mellemrum over */
+            .card p[style*="margin: 20px"] {
+                margin: 10px 0 1px 0 !important;
+                font-size: 0.75rem !important;
+            }
+            
+            /* Shopping items kompakte */
             .shopping-item {
-                padding: 12px !important;
-                gap: 8px !important;
-                font-size: 0.9rem !important;
+                padding: 10px !important;
+                gap: 6px !important;
+                font-size: 0.85rem !important;
             }
             
             /* Checkbox */
             .checkbox {
-                width: 40px !important;
-                height: 40px !important;
+                width: 32px !important;
+                height: 32px !important;
                 flex-shrink: 0 !important;
             }
             
             /* Graph trigger */
             .graph-trigger {
-                width: 40px !important;
-                height: 40px !important;
-                font-size: 1.1rem !important;
+                width: 36px !important;
+                height: 36px !important;
+                font-size: 1rem !important;
             }
             
             /* Drag handle */
             .drag-handle {
-                font-size: 1.3rem !important;
-                padding: 3px !important;
+                font-size: 1.2rem !important;
+                padding: 2px !important;
             }
         }
     </style>

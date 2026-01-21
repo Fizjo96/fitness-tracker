@@ -2,7 +2,7 @@
 <html lang="da">
 <head>
 <!-- PWA Manifest - Inline Base64 -->
-<link rel="manifest" href="https://drive.google.com/uc?export=download&id=1cIqGh_6c5W0JgnIvCgLWme55qo_eaIAK">
+<link rel="manifest" href="manifest.json">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -708,7 +708,6 @@
                 const data = await response.json();
                 
                 console.log('📦 Raw data received from Google Sheets:', data);
-                    console.log('📦 Raw data received from Google Sheets:', data);
                     
                     if (!data) {
                         console.error('❌ No data returned from Google Sheets (data is null/undefined)');
@@ -868,7 +867,6 @@
                         overlay.style.transition = 'opacity 0.3s ease';
                         setTimeout(() => overlay.remove(), 300);
                     }
-                })
             } catch (error) {
                 console.error('❌ Failed to load from Google Sheets:', error);
                 console.log('Using localStorage data');

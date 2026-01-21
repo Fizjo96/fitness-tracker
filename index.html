@@ -531,6 +531,9 @@
             user-select: none;
         }
 
+                font-size: 0.55rem !important;
+            }
+
         .drag-handle:active {
             cursor: grabbing;
         }
@@ -606,11 +609,6 @@
                 box-sizing: border-box;
             }
             
-            /* Sørg for at intet går uden for skærmen */
-            * {
-                max-width: 100%;
-                box-sizing: border-box;
-            }
             
             /* Reducer header størrelse */
             .header {
@@ -869,7 +867,7 @@
             .btn-add {
                 padding: 10px 16px !important;
                 font-size: 0.85rem !important;
-                width: 100% !important;
+                max-width: none !important;
                 margin-top: 10px !important;
             }
             
@@ -997,7 +995,7 @@
                 padding: 4px !important;
                 font-size: 0.65rem !important;
                 min-height: 30px !important;
-                width: 100% !important;
+                max-width: none !important;
             }
             
             textarea {
@@ -1164,6 +1162,13 @@
             .drag-handle {
                 font-size: 1.2rem !important;
                 padding: 2px !important;
+            }
+
+        /* Scale modal height on smaller screens */
+        @media screen and (max-height: 900px) {
+            div[style*="z-index: 9999"] .card {
+                height: calc(100vh - 40px) !important;
+                max-height: calc(100vh - 40px) !important;
             }
         }
     </style>
@@ -4516,13 +4521,27 @@
             const minWeight = state.goalWeight - 5;
             const range = maxWeight - minWeight;
             
-            // Calculate width: 80px per point, show ~10 points at a time
-            const pointSpacing = 80;
+            
+            
+            // Calculate width: 80px per point on desktop, fyld container på mobil
+            const isMobile = window.innerWidth <= 768;
             const leftMargin = 10;
             const rightMargin = 10;
-            // SVG width skal være minimum 800, ellers beregnes præcist
-            const calculatedWidth = leftMargin + ((history.length - 1) * pointSpacing) + rightMargin;
-            const svgWidth = Math.max(800, calculatedWidth);
+            
+            let pointSpacing, svgWidth;
+            
+            
+            if (isMobile) {
+                // På mobil: brug tættere fast spacing, lad grafen være bred nok
+                pointSpacing = 50; // Tættere punkter på mobil
+                const calculatedWidth = leftMargin + ((history.length - 1) * pointSpacing) + rightMargin;
+                svgWidth = Math.max(400, calculatedWidth); // Minimum 400px bred
+            } else {
+                // På desktop: brug fast spacing og scroll
+                pointSpacing = 80;
+                const calculatedWidth = leftMargin + ((history.length - 1) * pointSpacing) + rightMargin;
+                svgWidth = Math.max(800, calculatedWidth);
+            }
             
             // Helper function to calculate Y position (inverted, with padding)
             const getY = (weight) => {

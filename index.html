@@ -218,21 +218,21 @@
 
         .stat-box {
             background: rgba(255, 57, 57, 0.05);
-            padding: 20px;
+            padding: 10px;
             border-radius: 12px;
             text-align: center;
         }
 
         .stat-box .value {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.5rem;
+            font-size: 1.4rem;
             color: var(--primary);
         }
 
         .stat-box .label {
             color: var(--text-dim);
-            font-size: 0.9rem;
-            margin-top: 5px;
+            font-size: 0.7rem;
+            margin-top: 3px;
         }
 
         .add-form {
@@ -666,6 +666,88 @@
         /* Landscape mobil optimization */
         /* PORTRAIT MODE - Meget kompakt til mobil */
         @media screen and (max-width: 768px) and (orientation: portrait) {
+
+            /* Edit mode felter - mindre på mobil */
+            #currentWeightInput,
+            #startWeightInput,
+            #goalWeightInput {
+                font-size: 0.9rem !important;
+                padding: 5px 22px 5px 5px !important;
+            }
+            
+            #currentWeightInput + span,
+            #startWeightInput + span,
+            #goalWeightInput + span {
+                font-size: 0.7rem !important;
+                right: 5px !important;
+            }
+
+            /* Stat boxes - mindre højde på mobil */
+            .stat-box {
+                padding: 10px !important;
+            }
+            
+            .stat-box .value {
+                font-size: 1.4rem !important;
+            }
+            
+            .stat-box .value span {
+                font-size: 0.85rem !important;
+            }
+            
+            .stat-box .label {
+                font-size: 0.7rem !important;
+                margin-top: 3px !important;
+            }
+
+            /* Graph trigger - kompakt på mobil */
+            div.graph-trigger[onclick="showWeightGraph()"] {
+                width: 26px !important;
+                height: 18px !important;
+                padding: 2px 6px 2px 6px !important;
+                min-width: 26px !important;
+                min-height: 18px !important;
+                max-width: 26px !important;
+                max-height: 18px !important;
+            }
+            
+            div.graph-trigger[onclick="showWeightGraph()"] svg {
+                width: 10px !important;
+                height: 10px !important;
+                min-width: 10px !important;
+                min-height: 10px !important;
+                max-width: 10px !important;
+                max-height: 10px !important;
+
+            /* Edit mode felter - endnu mindre på mobil */
+            #currentWeightInput,
+            #startWeightInput,
+            #goalWeightInput {
+                font-size: 1.1rem !important;
+                padding: 6px 25px 6px 6px !important;
+            }
+            
+            #currentWeightInput + span,
+            #startWeightInput + span,
+            #goalWeightInput + span {
+                font-size: 0.75rem !important;
+                right: 6px !important;
+            }
+            }
+
+            /* Edit mode - større tekst på mobil */
+            #currentWeightInput,
+            #startWeightInput,
+            #goalWeightInput {
+                font-size: 2.2rem !important;
+                padding: 15px 40px 15px 15px !important;
+            }
+            
+            #currentWeightInput + span,
+            #startWeightInput + span,
+            #goalWeightInput + span {
+                font-size: 1.3rem !important;
+            }
 
             /* Shopping list - kompakt på mobil */
             .shopping-item {
@@ -2453,7 +2535,7 @@
                     <h2 style="display: flex; align-items: center; gap: 8px;">
                         Vægt Statistik
                         ${state.weightHistory.length > 0 ? `
-                            <div onclick="showWeightGraph()" style="display: inline-flex; align-items: center; justify-content: center; padding: 0px 6px 4px 6px; margin-top: -4px; background: rgba(255, 57, 57, 0.1); border: 2px solid var(--primary); border-radius: 6px; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='rgba(255, 57, 57, 0.2)'; this.style.borderColor='var(--secondary)'" onmouseout="this.style.background='rgba(255, 57, 57, 0.1)'; this.style.borderColor='var(--primary)'">
+                            <div class="graph-trigger" onclick="showWeightGraph()" style="display: inline-flex; align-items: center; justify-content: center; padding: 2px 6px 2px 6px; margin-top: -4px; background: rgba(255, 57, 57, 0.1); border: 2px solid var(--primary); border-radius: 6px; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='rgba(255, 57, 57, 0.2)'; this.style.borderColor='var(--secondary)'" onmouseout="this.style.background='rgba(255, 57, 57, 0.1)'; this.style.borderColor='var(--primary)'">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
                                 </svg>
@@ -2462,19 +2544,52 @@
                     </h2>
                     
                     ${state.editMode.stats ? `
-                        <div class="weight-adjuster">
-                            <button class="weight-arrow" onclick="adjustWeight(-0.1)">◀</button>
-                            <input 
-                                type="number" 
-                                step="0.1" 
-                                class="weight-display" 
-                                value="${state.tempWeight.toFixed(1)}"
-                                onchange="state.tempWeight = parseFloat(this.value); render();"
-                                style="border: 2px solid var(--primary); background: var(--bg-dark); border-radius: 12px; padding: 10px; text-align: center; cursor: text;"
-                            />
-                            <button class="weight-arrow" onclick="adjustWeight(0.1)">▶</button>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px;">
+                            <!-- Nuværende vægt (decimaler) -->
+                            <div style="text-align: center;">
+                                <label style="display: block; color: white; font-weight: 600; margin-bottom: 8px; font-size: 0.9rem;">NUVÆRENDE</label>
+                                <div style="position: relative;">
+                                    <input 
+                                        type="text" 
+                                        id="currentWeightInput"
+                                        value="${state.tempWeight.toFixed(1)}"
+                                        readonly onclick="openWeightPicker('current', state.tempWeight, 0.1, 'Nuværende Vægt')"
+                                        style="width: 100%; border: 2px solid var(--primary); background: var(--bg-dark); border-radius: 12px; padding: 6px 25px 6px 6px; text-align: center; color: var(--primary); font-size: 1rem; font-weight: 700; font-family: 'Bebas Neue', sans-serif; cursor: pointer;"
+                                    />
+                                    <span style="position: absolute; right: 6px; top: 50%; transform: translateY(-50%); color: var(--primary); font-size: 0.75rem; font-weight: 600; pointer-events: none;">kg</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Startvægt (hele tal) -->
+                            <div style="text-align: center;">
+                                <label style="display: block; color: white; font-weight: 600; margin-bottom: 8px; font-size: 0.9rem;">STARTVÆGT</label>
+                                <div style="position: relative;">
+                                    <input 
+                                        type="text" 
+                                        id="startWeightInput"
+                                        value="${Math.round(state.startWeight)}"
+                                        readonly onclick="openWeightPicker('start', state.startWeight, 1, 'Startvægt')"
+                                        style="width: 100%; border: 2px solid var(--primary); background: var(--bg-dark); border-radius: 12px; padding: 6px 25px 6px 6px; text-align: center; color: var(--primary); font-size: 1rem; font-weight: 700; font-family: 'Bebas Neue', sans-serif; cursor: pointer;"
+                                    />
+                                    <span style="position: absolute; right: 6px; top: 50%; transform: translateY(-50%); color: var(--primary); font-size: 0.75rem; font-weight: 600; pointer-events: none;">kg</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Målvægt (hele tal) -->
+                            <div style="text-align: center;">
+                                <label style="display: block; color: white; font-weight: 600; margin-bottom: 8px; font-size: 0.9rem;">MÅLVÆGT</label>
+                                <div style="position: relative;">
+                                    <input 
+                                        type="text" 
+                                        id="goalWeightInput"
+                                        value="${Math.round(state.goalWeight)}"
+                                        readonly onclick="openWeightPicker('goal', state.goalWeight, 1, 'Målvægt')"
+                                        style="width: 100%; border: 2px solid var(--primary); background: var(--bg-dark); border-radius: 12px; padding: 6px 25px 6px 6px; text-align: center; color: var(--primary); font-size: 1rem; font-weight: 700; font-family: 'Bebas Neue', sans-serif; cursor: pointer;"
+                                    />
+                                    <span style="position: absolute; right: 6px; top: 50%; transform: translateY(-50%); color: var(--primary); font-size: 0.75rem; font-weight: 600; pointer-events: none;">kg</span>
+                                </div>
+                            </div>
                         </div>
-                        <p style="text-align: center; color: var(--text-dim); margin-bottom: 20px">Juster din nuværende vægt</p>
                     ` : `
                         <div class="stat-grid">
                             <div class="stat-box">
@@ -2493,18 +2608,6 @@
                     `}
 
                     <div style="margin-top: 20px" class="${state.editMode.stats ? '' : 'hidden'}">
-                        <h3 style="font-size: 1.2rem; margin-bottom: 10px; color: var(--secondary)">Juster Mål</h3>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label>Startvægt (kg)</label>
-                                <input type="number" step="0.1" id="startWeightInput" value="${state.startWeight}">
-                            </div>
-                            <div class="form-group">
-                                <label>Målvægt (kg)</label>
-                                <input type="number" step="0.1" id="goalWeightInput" value="${state.goalWeight}">
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="card">
@@ -4000,6 +4103,156 @@
             render();
         }
 
+
+        function openWeightPicker(type, currentValue, step, label) {
+            const min = 0;
+            const max = 300;
+            const itemHeight = 50;
+            const visibleItems = 5;
+            
+            // Generate values array
+            let values = [];
+            if (step === 1) {
+                // Hele tal
+                for (let i = min; i <= max; i++) {
+                    values.push(i);
+                }
+            } else {
+                // Decimaler (0.1 step)
+                for (let i = min; i <= max; i += 0.1) {
+                    values.push(parseFloat(i.toFixed(1)));
+                }
+            }
+            
+            const modalHTML = `
+                <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15,15,15,0.95); z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px" onclick="this.remove()">
+                    <div class="card" style="max-width: 400px; width: 100%; padding: 30px;" onclick="event.stopPropagation()">
+                        <h2 style="margin: 0 0 20px 0; text-align: center; color: var(--primary);">${label}</h2>
+                        
+                        <!-- Drum Roll Picker -->
+                        <div style="position: relative; height: ${itemHeight * visibleItems}px; overflow: hidden; margin: 30px 0;">
+                            <!-- Selection indicator -->
+                            <div style="position: absolute; top: 50%; left: 0; right: 0; transform: translateY(-50%); height: ${itemHeight}px; border-top: 2px solid var(--primary); border-bottom: 2px solid var(--primary); pointer-events: none; z-index: 10; background: rgba(255, 57, 57, 0.05);"></div>
+                            
+                            <!-- Fade overlays -->
+                            <div style="position: absolute; top: 0; left: 0; right: 0; height: ${itemHeight * 2}px; background: linear-gradient(to bottom, var(--bg-card) 0%, transparent 100%); pointer-events: none; z-index: 5;"></div>
+                            <div style="position: absolute; bottom: 0; left: 0; right: 0; height: ${itemHeight * 2}px; background: linear-gradient(to top, var(--bg-card) 0%, transparent 100%); pointer-events: none; z-index: 5;"></div>
+                            
+                            <!-- Scrollable container -->
+                            <div id="drumRoll" style="height: 100%; overflow-y: scroll; scroll-snap-type: y mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none; padding: ${itemHeight * 2}px 0;">
+                                ${values.map((value, index) => `
+                                    <div class="drum-item" data-value="${value}" style="height: ${itemHeight}px; display: flex; align-items: center; justify-content: center; scroll-snap-align: center; font-size: 1.5rem; font-family: 'Bebas Neue', sans-serif; color: var(--text-dim); transition: all 0.2s;">
+                                        ${value}${step === 1 ? '' : ''} kg
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        
+                        <!-- Buttons -->
+                        <div style="display: flex; gap: 10px; margin-top: 30px;">
+                            <button class="btn-add" onclick="this.closest('[style*=fixed]').remove()" style="flex: 1; background: var(--border); color: var(--primary);">
+                                Annuller
+                            </button>
+                            <button class="btn-add" onclick="saveDrumValue('${type}')" style="flex: 1;">
+                                Gem
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
+            
+            // Setup
+            const drumRoll = document.getElementById('drumRoll');
+            window.drumValues = values;
+            window.drumType = type;
+            window.drumStep = step;
+            
+            // Hide scrollbar
+            const style = document.createElement('style');
+            style.textContent = '#drumRoll::-webkit-scrollbar { display: none; }';
+            document.head.appendChild(style);
+            
+            // Scroll to current value
+            const currentIndex = values.findIndex(v => Math.abs(v - currentValue) < 0.001);
+            if (currentIndex !== -1) {
+                drumRoll.scrollTop = currentIndex * itemHeight;
+            }
+            
+            // Update highlighted item on scroll
+            let scrollTimeout;
+            drumRoll.addEventListener('scroll', () => {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    updateDrumHighlight();
+                }, 50);
+                updateDrumHighlight();
+            });
+            
+            // Initial highlight
+            updateDrumHighlight();
+        }
+        
+        function updateDrumHighlight() {
+            const drumRoll = document.getElementById('drumRoll');
+            if (!drumRoll) return;
+            
+            const itemHeight = 50;
+            const visibleItems = 5;
+            
+            // Beregn hvilken item der er i center
+            // drumRoll har padding-top: 100px (2 * itemHeight)
+            // så scrollTop 0 = første item er i top, men vi vil have den i center
+            const scrollPosition = drumRoll.scrollTop;
+            const centerIndex = Math.round(scrollPosition / itemHeight);
+            
+            // Update all items
+            const items = drumRoll.querySelectorAll('.drum-item');
+            items.forEach((item, index) => {
+                const distance = Math.abs(index - centerIndex);
+                
+                if (distance === 0) {
+                    // Center item - highlighted
+                    item.style.color = 'var(--primary)';
+                    item.style.fontWeight = '700';
+                    item.style.fontSize = '2rem';
+                    item.style.transform = 'scale(1.2)';
+                } else if (distance === 1) {
+                    // Adjacent items
+                    item.style.color = 'var(--text)';
+                    item.style.fontWeight = '600';
+                    item.style.fontSize = '1.5rem';
+                    item.style.transform = 'scale(1)';
+                } else {
+                    // Far items
+                    item.style.color = 'var(--text-dim)';
+                    item.style.fontWeight = '400';
+                    item.style.fontSize = '1.5rem';
+                    item.style.transform = 'scale(0.9)';
+                }
+            });
+            
+            // Store current value
+            if (items[centerIndex]) {
+                window.drumCurrentValue = parseFloat(items[centerIndex].dataset.value);
+            }
+        }
+        function saveDrumValue(type) {
+            const value = window.drumCurrentValue;
+            
+            if (type === 'current') {
+                state.tempWeight = value;
+            } else if (type === 'start') {
+                state.startWeight = value;
+            } else if (type === 'goal') {
+                state.goalWeight = value;
+            }
+            
+            save();
+            render();
+            document.querySelector('[style*="position: fixed"][style*="z-index: 9999"]').remove();
+        }
         function updateGoals() {
             console.log('=== UPDATE GOALS DEBUG ===');
             const startInput = document.getElementById('startWeightInput');
@@ -4283,7 +4536,7 @@
                 
                 // Reopen graph and restore scroll position
                 setTimeout(() => {
-                    showWeightGraph();
+                    showWeightGraph(true); // Skip auto-scroll
                     
                     // Restore scroll position efter graph er rendered
                     setTimeout(() => {
@@ -4614,7 +4867,7 @@
             render();
         }
 
-        function showWeightGraph() {
+        function showWeightGraph(skipAutoScroll = false) {
             const history = state.weightHistory; // Show ALL data
             if (history.length === 0) {
                 alert('Ingen vægtdata endnu');
@@ -4782,8 +5035,9 @@
                                                     stroke="var(--bg-dark)"
                                                     stroke-width="1.5"
                                                     style="cursor: pointer; transition: all 0.2s;"
-                                                    onmouseover="this.setAttribute('r', '7'); this.nextElementSibling.style.display='block';"
-                                                    onmouseout="this.setAttribute('r', '4'); this.nextElementSibling.style.display='none';"
+                                                    onclick="event.stopPropagation(); event.preventDefault();"
+                                                    onmouseover="event.preventDefault(); this.setAttribute('r', '7'); this.nextElementSibling.style.display='block';"
+                                                    onmouseout="event.preventDefault(); this.setAttribute('r', '4'); this.nextElementSibling.style.display='none';"
                                                 />
                                                 <g style="display: none; pointer-events: none;">
                                                     <!-- Tooltip background -->
@@ -4897,7 +5151,7 @@
             // Auto-scroll to show newest data (rightmost)
             setTimeout(() => {
                 const scrollContainer = document.getElementById('graphScrollContainer');
-                if (scrollContainer && history.length > 10) {
+                if (scrollContainer && history.length > 10 && !skipAutoScroll) {
                     scrollContainer.scrollLeft = scrollContainer.scrollWidth;
                 }
             }, 50);
